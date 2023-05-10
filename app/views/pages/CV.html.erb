@@ -5,26 +5,89 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 </head>
-<body>
-	<%= render :partial => 'header' %> 
+<body> 
 	<div class="container">
 	<hr>
-	<h4 class="sub-header-side">CV template</h4>
-	<%= link_to 'Download File', download_file_path(filename: 'cv.pages') %>
+
+	<div style="border: 1px solid black;" class="d-flex justify-content-center">
+		<div>
+			<h4 class="sub-header-side">CV template
+					<%= link_to 'DOWNLOAD', download_file_path(filename: 'cv.pages'), class: 'no-deco btn-light btn', style: 'color: white; background-color: #660000;' %>
+
+			</h4>
+
+			<div class="small-box">
+			  	<%= image_tag('CV.png', class: 'img_small', alt: 'CV') %>
+			</div>	
+
+		</div>
+
+		<div>
+			<ul>
+				<li>hi</li>
+				<li>hi</li>
+				<li>hi</li>
+				<li>hi</li>
+			</ul>
+		</div>
+		
+	</div>
+	
+	<br>
+	  
 	<h4 class="sub-header-side">Use chat GPT to create your CV</h4>
-	<p>
-  
+	<p>how does this work? (collapse)</p>
+	<p>write about your experience in as much detail as you want using simple language, Chat GPT will transform this into 3-4 intellectually-sounding bullet points. We will then generate a CV for you to download. </p>
+	<p class="bold">
+	 Work Experience
+	</p>
+	<textarea class="input-gpt4-cv" placeholder="I worked for 2 years at HSBC in the global markets division. I was responsible for covering 25 clients from hedge funds, pension funds, banks to asset managers. I spent a lot of time analysing bonds and currencies and pitching investment ideas."></textarea>
+	<a class="btn btn-light">
+		+ experience
+	</a>
+	<br>
+	<br>
+	<p class="bold">
+	 Education
+	</p>
+	<textarea class="input-gpt4-cv" placeholder="I studied at Leeds university, my degree was a bachelor in finance. I was in the top 20% of the class. i spent a lot of time in the finance society looking at potential investment opportunities for seed-stage fintech investments."></textarea>
+	<a class="btn btn-light">
+		+ education
+	</a>
+	<br>
+	<br>
+	<p class="bold">
+	Additional Information
+	</p>
+	<textarea class="input-gpt4-cv" placeholder="I am fluent in 3 languages, spanish, german and english. I am also good at coding, specifically python. in my free time i enjoy skiing and sailing. Write anything else that comes to mind...certifications, volunteering work, technical skills, etc..."></textarea>
+	
+
+	<div class="d-flex justify-content-center mt-4">
+		<a class="btn btn-dark">
+			GENERATE CV
+		</a>	
+	</div>
+	
 	</div>
 </body>
 </html>
 
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
+<style type="text/css">
+	.input-gpt4-cv{
+		height: 100px;
+		width: 100%;
+	}
+</style>
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" data-turbolinks="false">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
   </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
   </div>
 </div>

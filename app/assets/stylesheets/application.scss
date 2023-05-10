@@ -15,6 +15,7 @@
 
  */
 @import "bootstrap";
+@import "font-awesome";
 
 body {
       font-family: Arial, sans-serif;
@@ -117,3 +118,27 @@ body {
   text-decoration: none;
   color: black;
   }
+
+.black{
+  color: black;
+}
+
+.no-deco{
+  color: black;
+  text-decoration: none;
+}
+.no-deco:hover{
+  color: black;
+}
+
+.img_small{
+    width:  23%;
+  }
+
+  .line{
+    border:  1px solid red;
+  }
+
+.bold{
+  font-weight: bold;
+}
