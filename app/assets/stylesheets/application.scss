@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+
+ */
+@import "bootstrap";
+
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+.c_txt{
+    text-align: center;
+}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .header h1 {
+      color: #333;
+      font-size: 36px;
+      font-weight: bold;
+      margin: 0;
+      padding: 10px 0;
+    }
+
+    .sub-header {
+      color: #666;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .sub-header-side{
+      font-weight: bold;
+      
+    }
+
+    nav {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    nav a:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+   .image-container {
+  height: 80vh;
+  background-image: url('https://global-uploads.webflow.com/628cb4acdaf9087cd633cc6b/640737b90fdddaf07e8cb33c_Top%20Paying%20Investment%20Banks%20Logos.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-container {
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity as needed */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.text-container p {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.no-style{
+  font-style:  none;
+  text-decoration: none;
+  color: black;
+  }
