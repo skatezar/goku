@@ -5,9 +5,11 @@ class PagesController < ApplicationController
 	def CV
 	end
 
-	def preview_pdf
-  		@pdf_url = '/path/to/your/pdf/document.pdf'
-  		render layout: 'pdf_preview'
+	def interviews
+	end
+
+	def ukfinancejobs
+
 	end
 	
 end
