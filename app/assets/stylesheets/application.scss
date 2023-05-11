@@ -159,3 +159,27 @@ body {
     width: 100%;
   }
 }
+
+/* app/assets/stylesheets/application.css */
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.filter-container h4 {
+  margin-bottom: 10px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: center;
+}
+
+.form-row .col-md-3 {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 767px) {
+  .form-row {
+    flex-wrap: wrap;
+  }
+}

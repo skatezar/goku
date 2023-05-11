@@ -3,6 +3,16 @@ class UkfinancejobsController < ApplicationController
 
   def index
     @ukfinancejobs = Ukfinancejob.all
+     # Initialize filter options
+    @locations = Ukfinancejob.pluck(:location).uniq
+    @types_of_job = Ukfinancejob.pluck(:type_of_job).uniq
+    @deadline_dates = Ukfinancejob.pluck(:deadline_date).uniq
+
+    # Apply filters if provided in params
+    @ukfinancejobs = @ukfinancejobs.where(location: params[:location]) if params[:location].present?
+    @ukfinancejobs = @ukfinancejobs.where(type_of_job: params[:type_of_job]) if params[:type_of_job].present?
+    @ukfinancejobs = @ukfinancejobs.where(deadline_date: params[:deadline_date]) if params[:deadline_date].present?
+    @ukfinancejobs = @ukfinancejobs.where(rolling_admission: params[:rolling_admission]) if params[:rolling_admission].present?
   end
 
   def show

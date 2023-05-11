@@ -8,18 +8,65 @@
 
 <%= link_to 'New UK Finance Job', new_ukfinancejob_path, class: 'btn btn-primary' %>
 
+<!-- app/views/ukfinancejobs/index.html.erb -->
+<h1>UK Finance Jobs</h1>
+
+<div class="filter-container">
+  <h4>Filter Jobs:</h4>
+  <form action="<%= ukfinancejobs_path %>" method="get">
+    <div class="form-row">
+      <div class="col-md-3 mb-3">
+        <%= label_tag :location, "Location" %>
+        <%= select_tag :location, options_for_select(@locations, params[:location]), { include_blank: true, class: "form-control" } %>
+      </div>
+      <div class="col-md-3 mb-3">
+        <%= label_tag :type_of_job, "Type of Job" %>
+        <%= select_tag :type_of_job, options_for_select(@types_of_job, params[:type_of_job]), { include_blank: true, class: "form-control" } %>
+      </div>
+      <div class="col-md-3 mb-3">
+        <%= label_tag :deadline_date, "Deadline Date" %>
+        <%= select_tag :deadline_date, options_for_select(@deadline_dates, params[:deadline_date]), { include_blank: true, class: "form-control" } %>
+      </div>
+      <div class="col-md-3 mb-3">
+        <%= label_tag :rolling_admission, "Rolling Admission" %>
+        <%= select_tag :rolling_admission, options_for_select([['All', ''], ['Yes', 'true'], ['No', 'false']], params[:rolling_admission]), class: "form-control" %>
+      </div>
+    </div>
+    <%= submit_tag "Filter", class: "btn btn-primary" %>
+  </form>
+</div>
+
+<div class="ukfinancejob-container">
+  <% @ukfinancejobs.each do |ukfinancejob| %>
+    <div class="ukfinancejob-card">
+      <!-- Job card code here -->
+    </div>
+  <% end %>
+</div>
+
+<div class="ukfinancejob-container">
+  <% @ukfinancejobs.each do |ukfinancejob| %>
+    <div class="ukfinancejob-card">
+      <!-- Job card code here -->
+    </div>
+  <% end %>
+</div>
+
 <div class="ukfinancejob-container">
   <% @ukfinancejobs.each do |ukfinancejob| %>
     <div class="ukfinancejob-card">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"><%= ukfinancejob.title %></h5>
-          <p class="card-text"><strong>URL:</strong> <%= ukfinancejob.url %></p>
+          <a class="card-text no-style " href="#{ukfinancejob.type_of_job}"><strong>
+          URL:</strong> <%= ukfinancejob.url %></a>
+          <br>
+          <br>
           <p class="card-text"><strong>Type of Job:</strong> <%= ukfinancejob.type_of_job %></p>
           <p class="card-text"><strong>Location:</strong> <%= ukfinancejob.location %></p>
           <p class="card-text"><strong>Deadline Date:</strong> <%= ukfinancejob.deadline_date %></p>
           <p class="card-text"><strong>Rolling Admission:</strong> <%= ukfinancejob.rolling_admission ? 'Yes' : 'No' %></p>
-          <%= link_to 'View', ukfinancejob_path(ukfinancejob), class: 'btn btn-primary' %>
+          <%= link_to 'View', ukfinancejob_path(ukfinancejob), class: 'btn btn-primary', style: 'width: 100%' %>
         </div>
       </div>
     </div>
