@@ -142,3 +142,20 @@ body {
 .bold{
   font-weight: bold;
 }
+
+.ukfinancejob-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ukfinancejob-card {
+  width: 20%;
+  margin: 10px;
+}
+
+@media (max-width: 767px) {
+  .ukfinancejob-card {
+    width: 100%;
+  }
+}

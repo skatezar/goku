@@ -5,3 +5,23 @@
 <h6 class="text-center">
 	A focused and all-encompassing overview
 </h6>
+
+<%= link_to 'New UK Finance Job', new_ukfinancejob_path, class: 'btn btn-primary' %>
+
+<div class="ukfinancejob-container">
+  <% @ukfinancejobs.each do |ukfinancejob| %>
+    <div class="ukfinancejob-card">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= ukfinancejob.title %></h5>
+          <p class="card-text"><strong>URL:</strong> <%= ukfinancejob.url %></p>
+          <p class="card-text"><strong>Type of Job:</strong> <%= ukfinancejob.type_of_job %></p>
+          <p class="card-text"><strong>Location:</strong> <%= ukfinancejob.location %></p>
+          <p class="card-text"><strong>Deadline Date:</strong> <%= ukfinancejob.deadline_date %></p>
+          <p class="card-text"><strong>Rolling Admission:</strong> <%= ukfinancejob.rolling_admission ? 'Yes' : 'No' %></p>
+          <%= link_to 'View', ukfinancejob_path(ukfinancejob), class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

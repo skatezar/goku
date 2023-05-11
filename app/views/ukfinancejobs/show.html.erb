@@ -1,0 +1,12 @@
+<!-- app/views/ukfinancejobs/show.html.erb -->
+<h1><%= @ukfinancejob.title %></h1>
+
+<div class="ukfinancejob-details">
+  <p><strong>URL:</strong> <%= @ukfinancejob.url %></p>
+  <p><strong>Type of Job:</strong> <%= @ukfinancejob.type_of_job %></p>
+  <p><strong>Location:</strong> <%= @ukfinancejob.location %></p>
+  <p><strong>Deadline Date:</strong> <%= @ukfinancejob.deadline_date %></p>
+  <p><strong>Rolling Admission:</strong> <%= @ukfinancejob.rolling_admission ? 'Yes' : 'No' %></p>
+</div>
+
+<%= link_to 'Back to UK Finance Jobs', ukfinancejobs_path, class: 'btn btn-primary' %>
