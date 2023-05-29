@@ -1,0 +1,2 @@
+class Coachingrequest < ApplicationRecord
+end

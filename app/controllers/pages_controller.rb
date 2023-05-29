@@ -10,7 +10,5 @@ class PagesController < ApplicationController
 	end
 
 	def ukfinancejobs
-
-	end
-	
+	end	
 end

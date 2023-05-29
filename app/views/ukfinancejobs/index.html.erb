@@ -3,7 +3,7 @@
   UK/EU Finance Jobs & Internships
 </h2>
 <h6 class="text-center">
-	A focused and all-encompassing overview of UK high finance job roles for juniors
+	A focused and all-encompassing overview of EU/UK high finance job roles for juniors (up to associate)
 </h6>
 
 
@@ -22,15 +22,12 @@
 	<%= select_tag :type_of_job, options_for_select([["Select type of job", ""]].concat(@types_of_job), params[:type_of_job]), { class: "form-control" } %>
 	</div>
 
-	<div class="col-md-3 p-3">
-	<%= label_tag :deadline_date, "Deadline Date" %>
-	<%= select_tag :deadline_date, options_for_select([["Select deadline date", ""]].concat(@deadline_dates), params[:deadline_date]), { class: "form-control" } %>
-	</div>
-
+  <!--
 	<div class="col-md-3 p-3">
 	<%= label_tag :rolling_admission, "Rolling Admission" %>
 	<%= select_tag :rolling_admission, options_for_select([["Select rolling admission", ""], ['All', ''], ['Yes', 'true'], ['No', 'false']], params[:rolling_admission]), class: "form-control" %>
 	</div>
+  -->
     </div>
     <div class="d-flex justify-content-center">
     	<%= submit_tag "Filter", class: "btn-dark btn btn-primary",  style: "width: 20%;" %>	

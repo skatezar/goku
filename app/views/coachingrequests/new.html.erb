@@ -1,0 +1,34 @@
+<br>
+<p class="text-center">
+	<strong>Connect with a professional</strong> and tailor the session to specific advice.
+</p>
+<p class="text-center">
+	60 minutes for $45.
+</p>
+<%= form_with(model: @coachingrequest, url: coachingrequests_path) do |form| %>
+  <div class="form-group d-flex justify-content-center">
+    <%= form.text_field :email, placeholder: 'email@gmail.com',  class: 'form-control short-input' %>
+  </div>
+  <br>
+  <div class="form-group d-flex justify-content-center">
+    <%= form.text_area :description, placeholder: 'What would you like to discuss? Please be specific on the area of finance you want to know more about. Is it investment banking, private wealth management, sales & trading...etc.',  class: 'form-control long-input' %>
+  </div>
+  <br>
+  <p class="text-center">
+  	We will reach out to you via email for setting up the call & payment details.
+  </p>
+  <div class="actions d-flex justify-content-center">
+    <%= form.submit 'Subscribe', class: 'btn btn-primary btn-dark' %>
+  </div>
+<% end %>
+
+<style type="text/css">
+	.short-input{
+		width: 400px;
+		height: 50px;
+	}
+	.long-input{
+		width:  400px;
+		height: 150px;
+	}
+</style>

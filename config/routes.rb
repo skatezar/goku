@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   resources :mailform
   get 'CV', to: 'pages#CV', as: :cv
+  resources :coachingrequests
   get 'aboutus', to: 'pages#aboutus', as: :aboutus
   resources :ukfinancejobs
   get 'interviews', to: 'pages#interviews', as: :interview
