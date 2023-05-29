@@ -91,3 +91,10 @@
     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
   </div>
 </div>
+
+
+<%= form_tag('/chat_gpt/generate_response', method: :post) do %>
+  <%= label_tag :message, 'Message:' %>
+  <%= text_area_tag :message %>
+  <%= submit_tag 'Submit' %>
+<% end %>

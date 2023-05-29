@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 	end
 
 	def CV
+    	@response = ChatgptService.call(params[:message])
 	end
 
 	def interviews

@@ -5,6 +5,8 @@ ruby "3.2.2"
 
 #boostrap
 
+gem 'httparty'
+
 gem 'bootstrap', '~> 5.1.0'
 gem 'jquery-rails'
 
