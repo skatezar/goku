@@ -1,0 +1,2 @@
+class Mailform < ApplicationRecord
+end

@@ -1,0 +1,22 @@
+<br>
+<p class="text-center">
+	<strong>Don't miss out</strong> on weekly job market updates. Information flow is key.
+</p>
+<%= form_with(model: @email, url: mailform_index_path) do |form| %>
+  <div class="form-group d-flex justify-content-center">
+
+    <%= form.text_field :email,placeholder: 'email@gmail.com',  class: 'form-control short-input' %>
+  </div>
+
+  <br>
+  <div class="actions d-flex justify-content-center">
+    <%= form.submit 'Subscribe', class: 'btn btn-primary btn-dark' %>
+  </div>
+<% end %>
+
+<style type="text/css">
+	.short-input{
+		width: 250px;
+		height: 50px;
+	}
+</style>
