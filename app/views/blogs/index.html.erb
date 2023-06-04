@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>How to get a job in finance - Blogposts</title>
+</head>
+<body>
+<br>
+<h2 class="text-center">
+  How to get a job in finance - Blogposts
+</h2>
+<h6 class="text-center">
+	Weekly blogposts - with specific & value-adding details.
+</h6>
+
+
+<%= link_to 'Add a Blog', new_ukfinancejob_path, class: 'btn btn-primary btn-dark' %>
+
+
+
+<div class="ukfinancejob-container">
+  <% @blogposts.each do |blogpost| %>
+    <div class="ukfinancejob-card">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= blogpost.title %></h5>
+          <br>
+          
+          <p class="card-text"><strong>Description:</strong> <%= blogpost.description %></p>
+          <br>
+          <br>
+          <div class="d-flex justify-content-around">	
+			<%= link_to 'Edit', edit_ukfinancejob_path(ukfinancejob), class: 'btn btn-primary' %>
+
+			<%= button_to 'Delete', ukfinancejob_path(ukfinancejob), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this job?' }, form: { "data-remote": true } %>
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+</body>
+</html>

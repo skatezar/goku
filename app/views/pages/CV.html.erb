@@ -98,3 +98,11 @@
   <%= text_area_tag :message %>
   <%= submit_tag 'Submit' %>
 <% end %>
+
+
+<div id="response-container">
+    <% if @response %>
+      <h4>Generated Response:</h4>
+      <p><%= @response %></p>
+    <% end %>
+  </div>
