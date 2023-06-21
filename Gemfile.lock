@@ -238,7 +238,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  bootstrap (~> 5.1.0)
+  bootstrap
   capybara
   debug
   font-awesome-sass (~> 6.4.0)
@@ -248,6 +248,7 @@ DEPENDENCIES
   jquery-rails
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
+  sassc-rails
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
