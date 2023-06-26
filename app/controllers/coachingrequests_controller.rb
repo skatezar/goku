@@ -19,6 +19,6 @@ class CoachingrequestsController < ApplicationController
 	private
 
 	def coachingrequest_params
-		params.require(:mailform).permit(:email, :description)
+		params.require(:coachingrequest).permit(:email, :description)
 	end
 end

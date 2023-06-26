@@ -9,17 +9,19 @@
 
 <h4 class="text-center">ADMIN ONLY</h4>
 
-<% if current_user and current_user.admin == 1 %>
-  
+<% if current_user and current_user.admin == true %>
+
 	<% @coachingrequest.each do |x| %>
-
-	<%= x.email %>
-	<%= x.description %>
-
-
-<% end %>
-
-
+	<div style="border: 1px solid black;">
+		<p class="text-center">
+			<%= x.email %>	
+		</p>
+		<p class="text-center">
+			<%= x.description %>	
+		</p>
+		</div>
+		<br>
+	<% end %>
 <% end %>
 
 </body>

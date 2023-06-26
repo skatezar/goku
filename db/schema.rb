@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_26_205116) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_26_212520) do
   create_table "blogs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -21,6 +21,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_205116) do
     t.string "para4"
     t.string "para5"
     t.string "desc"
+  end
+
+  create_table "calls", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "description"
   end
 
   create_table "coachingrequests", force: :cascade do |t|
