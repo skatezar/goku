@@ -14,8 +14,11 @@
 	Weekly blogposts - with specific & value-adding details.
 </h6>
 
+<% if current_user and current_user.admin == 1 %>
+  <%= link_to 'Add a Blog', new_blog_path, class: 'btn btn-primary btn-dark' %>
+<% end %>
 
-<%= link_to 'Add a Blog', new_blog_path, class: 'btn btn-primary btn-dark' %>
+
 
 
 

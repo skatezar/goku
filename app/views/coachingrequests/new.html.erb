@@ -32,3 +32,9 @@
 		height: 150px;
 	}
 </style>
+
+<br>
+
+<% if current_user and current_user.admin == 1 %>
+  <%= link_to 'Admin Panel', coachingrequests_path, class: 'btn btn-white w-100 ' %>
+<% end %>

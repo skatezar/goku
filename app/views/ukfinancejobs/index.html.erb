@@ -6,8 +6,9 @@
 	A focused and all-encompassing overview of EU/UK high finance job roles for juniors (up to associate)
 </h6>
 
-
-<%= link_to 'Add UK Finance Job', new_ukfinancejob_path, class: 'btn btn-primary btn-dark' %>
+<% if current_user and current_user.admin == 1 %>
+    <%= link_to 'Add UK Finance Job', new_ukfinancejob_path, class: 'btn btn-primary btn-dark' %>
+<% end %>
 
 <div class="filter-container">
 	<br>
