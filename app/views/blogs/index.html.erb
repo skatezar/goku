@@ -15,12 +15,12 @@
 </h6>
 
 
-<%= link_to 'Add a Blog', new_ukfinancejob_path, class: 'btn btn-primary btn-dark' %>
+<%= link_to 'Add a Blog', new_blog_path, class: 'btn btn-primary btn-dark' %>
 
 
 
 <div class="ukfinancejob-container">
-  <% @blogposts.each do |blogpost| %>
+  <% @blogs.each do |blogpost| %>
     <div class="ukfinancejob-card">
       <div class="card">
         <div class="card-body">

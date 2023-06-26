@@ -1,0 +1,51 @@
+<br>
+<h3 class="text-center">Add a blog</h3>
+<%= form_with(model: @blog, url: blogs_path) do |form| %>
+  
+<div class="form-group d-flex justify-content-center">
+<%= form.text_field :title, placeholder: 'title',  class: 'form-control short-input'  %>
+  </div>
+  <br>
+  <div class="form-group d-flex justify-content-center">
+    <%= form.text_area :description, class: 'TXT-area', placeholder: 'desc' %>
+  </div>
+  <br>
+  <div class="form-group d-flex justify-content-center">
+    <%= form.text_area :para1, class: 'TXT-area', placeholder: 'Para1' %>
+  </div>
+  <br>
+  <div class="form-group d-flex justify-content-center">
+    <%= form.text_area :para2, class: 'TXT-area', placeholder: 'Para2' %>
+  </div>
+  <br>
+  <div class="form-group d-flex justify-content-center">
+    <%= form.text_area :para3, class: 'TXT-area', placeholder: 'Para3' %>
+  </div>
+  <br>
+  <div class="form-group d-flex justify-content-center">
+    <%= form.text_area :para4, class: 'TXT-area', placeholder: 'Para4' %>
+  </div>
+  <br>
+  <div class="form-group d-flex justify-content-center">
+    <%= form.text_area :para5, class: 'TXT-area', placeholder: 'Para5' %>
+  </div>
+  <br>
+  <div class="actions d-flex justify-content-center">
+    <%= form.submit 'SUBMIT', class: 'btn btn-primary btn-dark' %>
+  </div>
+<% end %>
+
+<style type="text/css">
+	.short-input{
+		width: 400px;
+		height: 50px;
+	}
+	.long-input{
+		width:  400px;
+		height: 150px;
+	}
+
+	.TXT-area{
+		width: 400px;
+	}
+</style>
