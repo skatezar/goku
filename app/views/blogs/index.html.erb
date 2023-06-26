@@ -14,7 +14,7 @@
 	Weekly blogposts - with specific & value-adding details.
 </h6>
 
-<% if current_user and current_user.admin == 1 %>
+<% if current_user and current_user.admin == true %>
   <%= link_to 'Add a Blog', new_blog_path, class: 'btn btn-primary btn-dark' %>
 <% end %>
 
@@ -30,14 +30,21 @@
           <h5 class="card-title"><%= blogpost.title %></h5>
           <br>
           
-          <p class="card-text"><strong>Description:</strong> <%= blogpost.description %></p>
+          <p class="card-text"><strong>Description:</strong> <%= blogpost.para1 %></p>
+          <br>
+
+
+          <%= link_to 'View', blog_path(blogpost), class: 'btn btn-primary', style: 'width: 100%' %>
           <br>
           <br>
+          
           <div class="d-flex justify-content-around">	
-			<%= link_to 'Edit', edit_ukfinancejob_path(ukfinancejob), class: 'btn btn-primary' %>
 
-			<%= button_to 'Delete', ukfinancejob_path(ukfinancejob), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this job?' }, form: { "data-remote": true } %>
+          <% if current_user and current_user.admin == true %>
+			       <%= link_to 'Edit', edit_blog_path(blogpost), class: 'btn btn-primary' %>
 
+			       <%= button_to 'Delete', blog_path(blogpost), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this job?' }, form: { "data-remote": true } %>
+          <% end %>
           </div>
           
         </div>

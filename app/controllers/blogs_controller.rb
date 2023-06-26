@@ -6,7 +6,11 @@ class BlogsController < ApplicationController
 	def new
 		@blog = Blog.new
 	end
-
+	
+	def show
+		@blog = Blog.find(params[:id])
+	end
+	
 	def create
 		@blog = Blog.new(blog_params)
 		if @blog.save
@@ -19,6 +23,6 @@ class BlogsController < ApplicationController
 	private
 
 	def blog_params
-		params.require(:mailform).permit(:title, :para1, :para2, :para3, :para4, :para5, :desc)
+		params.require(:blog).permit(:title, :para1, :para2, :para3, :para4, :para5, :desc)
 	end
 end
