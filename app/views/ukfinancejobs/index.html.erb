@@ -61,6 +61,10 @@
           <h5 class="card-title"><%= ukfinancejob.title %></h5>
           <a style="color: blue;" class="card-text no-style " href="#{ukfinancejob.type_of_job}"><strong>
           Link</strong></a>
+          <div style="display: block; position: absolute; margin-top:-60px; margin-left:100px;">
+            <%= cl_image_tag ukfinancejob.photo.key, height: 80, width: 106, crop: :fill %>
+          </div>
+          <br>
           <br>
           <br>
           <p class="card-text"><strong>Type of Job:</strong> <%= ukfinancejob.type_of_job %></p>
