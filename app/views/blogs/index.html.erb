@@ -27,14 +27,15 @@
     <div class="ukfinancejob-card">
       <div class="card">
         <div class="card-body">
+          <div style="display: block; position: absolute; right:10px; top: 10px;">
+            <%= cl_image_tag blogpost.photo.key, height: 80, width: 106, crop: :fill %>
+          </div>
           <h5 class="card-title"><%= blogpost.title %></h5>
           <br>
-          
+          <br>
           <p class="card-text"><strong>Description:</strong> <%= blogpost.para1 %></p>
           <br>
-
-
-          <%= link_to 'View', blog_path(blogpost), class: 'btn btn-primary', style: 'width: 100%' %>
+          <%= link_to 'View', blog_path(blogpost), class: 'btn btn-white', style: 'width: 100%' %>
           <br>
           <br>
           

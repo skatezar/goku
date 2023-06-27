@@ -30,6 +30,10 @@
     <%= form.text_area :para5, class: 'TXT-area', placeholder: 'Para5' %>
   </div>
   <br>
+  <div class="form-group">
+      <%= form.file_field :photo, as: :file %>
+  </div>
+  <br>
   <div class="actions d-flex justify-content-center">
     <%= form.submit 'SUBMIT', class: 'btn btn-primary btn-dark' %>
   </div>

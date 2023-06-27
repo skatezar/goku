@@ -1,16 +1,22 @@
 <!-- app/views/ukfinancejobs/show.html.erb -->
-<div class="container">
-  <h1><%= @blog.title %></h1>
-  <div class="ukfinancejob-details">
-    <p><strong>Description:</strong> <%= @blog.desc %></p>
-    <p><%= @blog.para1 %></p>
-    <p><%= @blog.para2 %></p>
-    <p><%= @blog.para3 %></p>
-    <p><%= @blog.para4 %></p>
-    <p><%= @blog.para5 %></p>
-  </div>  
-  <%= link_to 'Back to all blogs', blogs_path, class: 'btn btn-primary' %>
+  <div class="container">
+    <%= link_to 'Back to all blogs', blogs_path, class: 'btn btn-white' %>
+    <h1 class="text-center"><%= @blog.title %></h1>
+    <div class="d-flex justify-content-center">
+      <%= cl_image_tag @blog.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>  
+    <div class="ukfinancejob-details">
+      <br>
+      <p class="text-center"><strong>Description:</strong> <%= @blog.desc %></p>
+      <p class="text-center"><%= @blog.para1 %></p>
+      <p class="text-center"><%= @blog.para2 %></p>
+      <p class="text-center"><%= @blog.para3 %></p>
+      <p class="text-center"><%= @blog.para4 %></p>
+      <p class="text-center"><%= @blog.para5 %></p>
+    </div>  
+  </div>
 </div>
+
 
 <% if current_user and current_user.admin == true %>
 
@@ -21,3 +27,4 @@
 
     </div>
 <% end %>
+
