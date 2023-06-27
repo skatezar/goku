@@ -13,4 +13,7 @@ class PagesController < ApplicationController
 
 	def ukfinancejobs
 	end	
+
+	def requestsubmission
+	end
 end

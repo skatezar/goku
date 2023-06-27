@@ -12,7 +12,7 @@
 <% if current_user and current_user.admin == true %>
 
 	<% @coachingrequest.each do |x| %>
-	<div style="border: 1px solid black;">
+	<div style="border: 1px solid black;" class="p-5">
 		<p class="text-center">
 			<%= x.email %>	
 		</p>

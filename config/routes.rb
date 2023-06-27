@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'CV', to: 'pages#CV', as: :cv
   resources :coachingrequests
   get 'aboutus', to: 'pages#aboutus', as: :aboutus
+  get 'request submission', to: 'pages#requestsubmission', as: :requestsubmission
   resources :ukfinancejobs
   get 'interviews', to: 'pages#interviews', as: :interview
   get '/downloads/:filename', to: 'downloads#download', as: 'download_file'

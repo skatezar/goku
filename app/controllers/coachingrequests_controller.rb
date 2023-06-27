@@ -10,7 +10,7 @@ class CoachingrequestsController < ApplicationController
 	def create
 		@coachingrequest = Coachingrequest.new(coachingrequest_params)   
 	    if @coachingrequest.save
-		    redirect_to root_path
+		    redirect_to requestsubmission_path
 		else
 		    render :new
 		end
