@@ -26,7 +26,7 @@ class BlogsController < ApplicationController
 
 	def update
 		if @blog.update(blog_params)
-	      redirect_to @blog, notice: 'all good'
+	      redirect_to @blog
 	    else
 	      render :edit
 	    end

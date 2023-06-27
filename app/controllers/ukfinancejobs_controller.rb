@@ -55,6 +55,6 @@ class UkfinancejobsController < ApplicationController
   end
 
   def ukfinancejob_params
-    params.require(:ukfinancejob).permit(:title, :url, :type_of_job, :location, :deadline_date, :rolling_admission)
+    params.require(:ukfinancejob).permit(:photo, :title, :url, :type_of_job, :location, :deadline_date, :rolling_admission)
   end
 end

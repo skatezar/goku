@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
+gem "cloudinary"
+
+gem "dotenv-rails"
+
 gem 'devise'
 
 #boostrap
@@ -81,3 +85,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+

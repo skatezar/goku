@@ -11,3 +11,5 @@
   <%= link_to 'Back to UK Finance Jobs', ukfinancejobs_path, class: 'btn btn-primary' %>
 </div>
 
+
+<%= cl_image_tag @ukfinancejob.photo.key, height: 300, width: 400, crop: :fill %>
