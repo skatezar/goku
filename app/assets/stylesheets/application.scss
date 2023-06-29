@@ -407,8 +407,14 @@ body {
     border: 1px solid black;
   }
 
-  @media (max-width: 900px) {
+@media (max-width: 900px) {
     .desktop-only{
+      display:none;
+      }
+}
+
+@media (min-width: 900px) {
+    .mobile-only{
       display:none;
       }
 }
@@ -421,4 +427,8 @@ body {
 .btn-white:hover{
   background-color: black;
   color: white;
+}
+
+.img_medium{
+  width:80%;
 }

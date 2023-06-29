@@ -6,25 +6,46 @@
 	<title></title>
 </head>
 <body> 
-	<div class="container">
-	<hr>
-	<h4 class="text-center">CV Template</h4>
-	<br>
-	<div class="d-flex justify-content-around">
-		<p class="text-center" style="font-size: 20px;">
-			<i class="fa-brands fa-google-drive"></i>
-			<a target="_blank" href="https://docs.google.com/document/d/1iR5_jE6RaOqhiXkX021-3csPTZF4exgU/edit#heading=h.gjdgxs" style="text-decoration: none; font-size: 20px;">Google Drive link</a>
-		</p>
-		<%= link_to 'DOWNLOAD WORD DOCUMENT', download_file_path(filename: 'cv.docx'), class: 'no-deco btn-light btn', style: 'color: white; background-color: green;' %>
+	<div class="container desktop-only">
+		<hr>
+		<h4 class="text-center">CV Template</h4>
+		<br>
+		<div class="d-flex justify-content-around">
+			<p class="text-center" style="font-size: 20px;">
+				<i class="fa-brands fa-google-drive"></i>
+				<a target="_blank" href="https://docs.google.com/document/d/1iR5_jE6RaOqhiXkX021-3csPTZF4exgU/edit#heading=h.gjdgxs" style="text-decoration: none; font-size: 20px;">Google Drive link</a>
+			</p>
+			<%= link_to 'DOWNLOAD WORD DOCUMENT', download_file_path(filename: 'cv.docx'), class: 'no-deco btn-light btn', style: 'color: white; background-color: green;' %>
+		</div>
+		<br>
+			<div class="d-flex justify-content-center">	
+				<%= image_tag('CV.png', class: 'img_small', alt: 'CV') %>
+			</div>
+			<div>
+			</div>
 	</div>
-	<br>
-		<div class="d-flex justify-content-center">	
-			<%= image_tag('CV.png', class: 'img_small', alt: 'CV') %>
+
+	<!-- mobile only -->
+
+	<div class="container mobile-only">
+		<hr>
+		<h4 class="text-center">CV Template</h4>
+		<br>
+		<div class="d-flex justify-content-around">
+			<p class="text-center" style="font-size: 20px;">
+				<i class="fa-brands fa-google-drive"></i>
+				<a target="_blank" href="https://docs.google.com/document/d/1iR5_jE6RaOqhiXkX021-3csPTZF4exgU/edit#heading=h.gjdgxs" style="text-decoration: none; font-size: 20px;">Google Drive link</a>
+			</p>
 		</div>
-		<div>
-			
+		<div class="d-flex justify-content-center">
+			<%= link_to 'DOWNLOAD WORD DOCUMENT', download_file_path(filename: 'cv.docx'), class: 'no-deco btn-light btn text-center', style: 'color: white; background-color: green;' %>
 		</div>
-	  	
+		<br>
+			<div class="d-flex justify-content-center">	
+				<%= image_tag('CV.png', class: 'img_medium', alt: 'CV') %>
+			</div>
+			<div>
+			</div>
 	</div>		
 
 	
