@@ -60,18 +60,22 @@
         <div class="card-body">
           <h5 class="card-title"><%= ukfinancejob.title %></h5>
           <a style="color: blue;" class="card-text no-style " href="#{ukfinancejob.type_of_job}"><strong>
-          Link</strong></a>
-          <div style="display: block; position: absolute; right:10px; top: 10px;">
-            <%= cl_image_tag ukfinancejob.photo.key, height: 80, width: 106, crop: :fill %>
-          </div>
+          Career Link</strong></a>
           <br>
+          <br>
+          <div class="mobile-only">
+            <%= cl_image_tag ukfinancejob.photo.key, class: "mobile-only", height: 300, crop: :fill %>
+          </div>
+          <div class="desktop-only">
+            <%= cl_image_tag ukfinancejob.photo.key, class: "desktop-only", height: 235, crop: :fill %>
+          </div>
           <br>
           <br>
           <p class="card-text"><strong>Type of Job:</strong> <%= ukfinancejob.type_of_job %></p>
           <p class="card-text"><strong>Location:</strong> <%= ukfinancejob.location %></p>
           <p class="card-text"><strong>Deadline Date:</strong> <%= ukfinancejob.deadline_date %></p>
           <p class="card-text"><strong>Rolling Admission:</strong> <%= ukfinancejob.rolling_admission ? 'Yes' : 'No' %></p>
-          <%= link_to 'View', ukfinancejob_path(ukfinancejob), class: 'btn btn-primary', style: 'width: 100%' %>
+          <%= link_to 'View', ukfinancejob_path(ukfinancejob), class: 'btn btn-white', style: 'width: 100%' %>
           <br>
           <br>
           <% if current_user and current_user.admin == true %>
