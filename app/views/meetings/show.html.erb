@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<div>
+  <%= link_to "Back to calendar", networking_path, class: "btn btn-white" %>
+</div>
+
+<%= render @meeting %>
+
+
+<br>
+<div>
+<% if current_user and current_user.admin == true %>
+  <%= link_to "Edit this meeting", edit_meeting_path(@meeting), class: "btn" %> 
+<% end %>
+  
+  <%= button_to "Destroy this meeting", @meeting, method: :delete, class: "btn " %>
+</div>

@@ -9,6 +9,8 @@ gem "dotenv-rails"
 
 gem 'devise'
 
+gem 'simple_calendar'
+
 #boostrap
 
 gem 'httparty'

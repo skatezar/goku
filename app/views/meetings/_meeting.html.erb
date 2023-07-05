@@ -1,0 +1,37 @@
+<div id="<%= dom_id meeting %>">
+  <h4 class="text-center">
+    <%= meeting.name %>
+  </h4>
+
+  <p class="text-center">
+    <%= meeting.start_time.day %>
+    
+    <%= t('date.month_names')[meeting.start_time.month] %> <%= meeting.start_time.year %>
+
+  </p>
+
+<div class="d-flex justify-content-center">
+    <%= cl_image_tag meeting.photo1.key, height: 100, crop: :fill %>
+</div>
+
+<br>
+
+<div class="d-flex justify-content-center">
+  <strong style="padding-right: 5px;">description: </strong>
+  <p>
+    <%= meeting.description %>  
+  </p>
+</div>
+
+<div class="d-flex justify-content-center">
+  <strong>  
+    <a href="<%= meeting.link_to_url %>" class="no-style" target="_blank">  
+      Link for more information
+    </a>
+  </strong>
+</div>
+  
+
+
+
+</div>

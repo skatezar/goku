@@ -1,0 +1,55 @@
+<section class="container">
+  
+
+<%= form_with(model: meeting) do |form| %>
+  <% if meeting.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+
+      <ul>
+        <% meeting.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :virtual_or_inperson, style: "display: block" %>
+    <%= form.text_field :virtual_or_inperson, class: 'form-control' %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description, class: 'form-control' %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :link_to_url, style: "display: block" %>
+    <%= form.text_field :link_to_url, class: 'form-control' %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :location, style: "display: block" %>
+    <%= form.text_field :location, class: 'form-control' %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :start_time, style: "display: block" %>
+    <%= form.datetime_field :start_time, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
+      <%= form.file_field :photo1, as: :file %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit "create", class: "btn btn-white d-flex" %>
+  </div>
+<% end %>
+</section>

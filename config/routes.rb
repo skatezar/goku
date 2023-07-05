@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :meetings
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root 'pages#index'
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   get 'CV', to: 'pages#CV', as: :cv
   resources :coachingrequests
   get 'aboutus', to: 'pages#aboutus', as: :aboutus
+  get 'networking', to: 'pages#networking', as: :networking
   get 'request submission', to: 'pages#requestsubmission', as: :requestsubmission
   resources :ukfinancejobs
   get 'interviews', to: 'pages#interviews', as: :interview
