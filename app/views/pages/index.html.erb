@@ -14,48 +14,53 @@
     <div class="container">
         <ul class="timeline">
             <li>
-                <div class="timeline-image"><i class="fa-solid fa-pen desktop-only" style="font-size:70px; margin-top:40px;"></i></div>
+                <div class="timeline-image"><i class="fa-regular desktop-only fa-calendar" style="font-size:70px; margin-top:40px;"></i></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4 class="subheading">
-                        1. Download our <%= link_to ' CV Template', cv_path, class: 'btn-white btn' %>
-                        </h4>                      
+                        <h4 class="subheading">1. Use our networking calendar!</h4>
                     </div>
-                    <div class="timeline-body"><p class="text-muted">A well-formatted CV is key.</p></div>
+
+                    <div class="timeline-body">
+                        The <%= link_to 'Networking Calendar', networking_path, class: 'btn btn-white ' %> will show all relevant networking events happening near you.</p></div>
+
+                        
                 </div>
             </li>
+            
             <li class="timeline-inverted">
                 <div class="timeline-image"><i class="fa-solid desktop-only fa-magnifying-glass" style="font-size:70px; margin-top:40px;"></i></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4 class="subheading">2. Find the right opportunities</h4>
                     </div>
-                    <div class="timeline-body"><p class="text-muted">Use our <%= link_to 'Finance Job Filter', ukfinancejobs_path, class: 'btn btn-white' %> to find all relevant opportunities in finance. Don't miss out on the small events that get your foot in the door.</p></div>
+                    <div class="timeline-body"><p class="text-muted">Use our <%= link_to 'Finance Job Filter', ukfinancejobs_path, class: 'btn btn-white' %> to find all relevant internships in finance. </p></div>
                 </div>
             </li>
-
             <li>
-
-                <div class="timeline-image"><i class="fa-regular desktop-only fa-calendar" style="font-size:70px; margin-top:40px;"></i></div>
+                <div class="timeline-image"><i class="fa-solid fa-pen desktop-only" style="font-size:70px; margin-top:40px;"></i></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4 class="subheading">3. Network and stay up to date!</h4>
+                        <h4 class="subheading">
+                        3. Download our <%= link_to ' CV Template', cv_path, class: 'btn-white btn' %>
+                        </h4>                      
                     </div>
-                    <div class="timeline-body"><p class="text-muted">Join our <i class="fa-brands fa-whatsapp"> </i><%= link_to ' Whatsapp', new_mailform_path, class: 'msg-link' %>
-
-                     and <i class="fa-brands fa-telegram"></i><%= link_to ' Telegram', new_mailform_path, class: 'msg-link'%> groups or subscribe to our <%= link_to 'Mailing List ', new_mailform_path, class: 'btn btn-white ' %>
-                 to receive weekly update messages on deadlines & new opportunities. The <%= link_to 'Networking Calendar', new_mailform_path, class: 'btn btn-white ' %> will show all relevant networking events happening near you.</p></div>
-
-                     
+                    <div class="timeline-body"><p class="text-muted">A well-formatted CV is key.</p></div>
                 </div>
             </li>
+            
             <li class="timeline-inverted">
               <div class="timeline-image"><i class="fa-regular desktop-only fa-pen-to-square" style="font-size:70px; margin-top:40px;"></i></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4 class="subheading">4. Read our Blog!</h4>
+                        <h4 class="subheading">4. Read our Blog & join our groups!</h4>
                     </div>
-                    <div class="timeline-body"><p class="text-muted">Read our <%= link_to 'Blog', blogs_path, class: 'btn btn-white' %> for tips on interviewing, networking and other useful information</p></div>
+                    <div class="timeline-body"><p class="text-muted">Read our <%= link_to 'Blog', blogs_path, class: 'btn btn-white' %> or Join our <i class="fa-brands fa-whatsapp"> </i><%= link_to ' Whatsapp', new_mailform_path, class: 'msg-link' %>
+
+                     and <i class="fa-brands fa-telegram"></i><%= link_to ' Telegram', new_mailform_path, class: 'msg-link'%> groups & subscribe to our <%= link_to 'Mailing List ', new_mailform_path, class: 'btn btn-white ' %>
+                 to receive weekly update messages on deadlines & new opportunities.
+
+                     
+                </div>
                 </div>
             </li>
             <li>
