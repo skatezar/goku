@@ -414,12 +414,27 @@ body {
     .desktop-only{
       display:none;
       }
+
+    .calendar-title{
+    margin-top:10px;
+    padding-left:20px;
+    padding-right:20px;
+    font-size:12px;
+    font-weight:bold;
+  }
+
 }
 
 @media (min-width: 900px) {
     .mobile-only{
       display:none;
       }
+
+    .calendar-title{
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+  }
 }
 
 .no-deco{
@@ -435,3 +450,32 @@ body {
 .img_medium{
   width:80%;
 }
+.calendar-heading{
+    display: flex;
+    justify-content: center;
+    margin:20px;
+  }
+
+  .calendar-heading a{
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    width:100px;
+    text-align: center;
+  }
+
+  .calendar-heading a:hover{
+    opacity: 0.5;
+  }
+
+  
+
+  .tr{
+    width:200px; 
+    color: red;
+  }
+  .blue{
+    color: blue;
+  }

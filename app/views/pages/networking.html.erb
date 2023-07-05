@@ -11,6 +11,7 @@
 	<%= link_to "new event", new_meeting_path, class: "btn btn-white" %>
 <% end %>
 
+<div class="desktop-only">
 <%= week_calendar(number_of_weeks: 1, events: @meetings) do |date, meetings| %>
   <%= date %>
   <% meetings.each do |meeting| %>
@@ -31,40 +32,30 @@
     </div>
 
   <% end %>
+<% end %>	
+</div>
+
+
+<div class="mobile-only">
+	<%= calendar(number_of_days: 2, events: @meetings) do |date, meetings| %>
+  <%= date %>
+  <% meetings.each do |meeting| %>
+    <div class="d-flex justify-content-center">
+      	<%= link_to "#{meeting.name}", meeting_path(meeting), class: "btn btn-white blue" %>
+    </div>
+    <br>
+    <div class="d-flex justify-content-center">
+  		<i class="fa-solid fa-location-dot"></i>
+  		<p style="margin-left:10px;">
+  			<%= meeting.location %>
+  		</p>
+    </div>
+    <div class="d-flex justify-content-center" style="margin-top:-12px;">	
+    	<p>
+    		<%= meeting.start_time.hour %>h (UK time)
+    	</p>
+    </div>
+
+  <% end %>
 <% end %>
-
-<style type="text/css">
-	.calendar-heading{
-		display: flex;
-		justify-content: center;
-		margin:20px;
-	}
-
-	.calendar-heading a{
-		color: black;
-		text-decoration: none;
-		border: 1px solid black;
-		padding: 5px;
-		border-radius: 10px;
-		width:100px;
-		text-align: center;
-	}
-
-	.calendar-heading a:hover{
-		opacity: 0.5;
-	}
-
-	.calendar-title{
-		padding-left:20px;
-		padding-right:20px;
-		padding-top:5px;
-	}
-
-	.tr{
-		width:200px; 
-		color: red;
-	}
-	.blue{
-		color: blue;
-	}
-</style>
+</div>
