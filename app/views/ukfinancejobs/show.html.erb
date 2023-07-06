@@ -1,24 +1,44 @@
-<!-- app/views/ukfinancejobs/show.html.erb -->
-<div class="container d-flex justify-content-center">
-  <div class="m-3">
-    <h1><%= @ukfinancejob.title %></h1>
-    <div class="ukfinancejob-details">
-      <p><a class="no-deco" href="#{<% @ukfinancejob.url %>}">Link to career site</a></abbr></p>
-      <p><strong>Type of Job:</strong> <%= @ukfinancejob.type_of_job %></p>
-      <p><strong>Location:</strong> <%= @ukfinancejob.location %></p>
-      <p><strong>Deadline Date:</strong> <%= @ukfinancejob.deadline_date %></p>
-      <p><strong>Rolling Admission:</strong> <%= @ukfinancejob.rolling_admission ? 'Yes' : 'No' %></p>
-    </div>  
-    <%= link_to 'Back to UK Finance Jobs', ukfinancejobs_path, class: 'btn btn-primary' %>  
-  </div>
-  
-  <div class="m-3"> 
-    <%= cl_image_tag @ukfinancejob.photo.key, height: 300, width: 400, crop: :fill %>
+
+<br>
+<div class="desktop-only">
+  <div class="container d-flex justify-content-center">
+    <div class="m-3">
+      <h1><%= @ukfinancejob.title %></h1>
+      <div class="ukfinancejob-details">
+        <a class="card-text btn btn-white w-100 mb-3" href="<%= @ukfinancejob.url%>" target="_blank"><strong>
+          Link to career website</strong></a>
+        <p><strong>Type of Job:</strong> <%= @ukfinancejob.type_of_job %></p>
+        <p><strong>Location:</strong> <%= @ukfinancejob.location %></p>
+        <p><strong>Deadline Date:</strong> <%= @ukfinancejob.deadline_date %></p>
+        <p><strong>Rolling Admission:</strong> <%= @ukfinancejob.rolling_admission ? 'Yes' : 'No' %></p>
+      </div>  
+    </div>
+    
+    <div class="m-3"> 
+      <%= cl_image_tag @ukfinancejob.photo.key, height: 300, crop: :fill %>
+    </div>
   </div>
 </div>
 
-
-
+<div class="mobile-only">
+  <div class="container d-flex justify-content-center">
+    <div class="m-">
+      <h4 class="text-center"><%= @ukfinancejob.title %></h4>
+      <div class="ukfinancejob-details">
+        <br>
+        <a class="card-text btn btn-white w-100 mb-3" href="<%= @ukfinancejob.url%>" target="_blank"><strong>
+          Link to career website</strong></a>
+        <p><strong>Type of Job:</strong> <%= @ukfinancejob.type_of_job %></p>
+        <p><strong>Location:</strong> <%= @ukfinancejob.location %></p>
+        <p><strong>Deadline Date:</strong> <%= @ukfinancejob.deadline_date %></p>
+        <p><strong>Rolling Admission:</strong> <%= @ukfinancejob.rolling_admission ? 'Yes' : 'No' %></p>
+      </div>  
+    </div>
+  </div>
+  <div class="m-3"> 
+      <%= cl_image_tag @ukfinancejob.photo.key, height: 300, crop: :fill %>
+    </div>
+</div>
 
 <% if current_user and current_user.admin == true %>
 

@@ -11,6 +11,28 @@
 	<%= link_to "new event", new_meeting_path, class: "btn btn-white" %>
 <% end %>
 
+<br>
+<h4 class="text-center">
+	Networking Calendar
+</h4>
+
+<br>
+<button class="btn mobile-only w-100 btn-white" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">+ What is this?</button>
+
+<button class="btn desktop-only btn-white" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">+ What is this?</button>
+         
+<div class="collapse -only" id="collapseExample1">
+	<p class="container">
+		This calendar will inform you about any virtual/in person networking events available within London/Europe. Click on an event for more details on registrations.
+	</p>
+	<p class="container" style="margin-top:-20px;">
+		Attending these networking sessions - especially if they are in person - can be <strong>vital to your success in finding a job.</strong>
+		<hr>
+	</p>
+
+</div>
+
+
 <div class="desktop-only">
 <%= week_calendar(number_of_weeks: 1, events: @meetings) do |date, meetings| %>
   <%= date %>

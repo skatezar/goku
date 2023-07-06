@@ -17,11 +17,12 @@
                 <div class="timeline-image"><i class="fa-regular desktop-only fa-calendar" style="font-size:70px; margin-top:40px;"></i></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4 class="subheading">1. Use our networking calendar!</h4>
+                    <%= link_to 'Networking Calendar', networking_path, class: 'btn btn-white w-100' %>
                     </div>
 
-                    <div class="timeline-body">
-                        The <%= link_to 'Networking Calendar', networking_path, class: 'btn btn-white ' %> will show all relevant networking events happening near you.</p></div>
+                    <div class="timeline-body p-smaller p-1">
+                        A calendar to find all virtual/in person finance-related networking events in Europe & London.
+                    </div>
 
                         
                 </div>
@@ -31,9 +32,11 @@
                 <div class="timeline-image"><i class="fa-solid desktop-only fa-magnifying-glass" style="font-size:70px; margin-top:40px;"></i></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4 class="subheading">2. Find the right opportunities</h4>
+                        <%= link_to 'Finance Job Filter', ukfinancejobs_path, class: 'btn btn-white w-100' %>
                     </div>
-                    <div class="timeline-body"><p class="text-muted">Use our <%= link_to 'Finance Job Filter', ukfinancejobs_path, class: 'btn btn-white' %> to find all relevant internships in finance. </p></div>
+                    <div class="timeline-body">
+                        <p class="p-smaller p-1">Find all <strong>relevant</strong> internships in finance. </p>
+                    </div>
                 </div>
             </li>
             <li>
@@ -41,10 +44,12 @@
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4 class="subheading">
-                        3. Download our <%= link_to ' CV Template', cv_path, class: 'btn-white btn' %>
+                            <%= link_to ' CV Template', cv_path, class: 'btn-white btn w-100' %>
                         </h4>                      
                     </div>
-                    <div class="timeline-body"><p class="text-muted">A well-formatted CV is key.</p></div>
+                    <div class="timeline-body">
+                        <p class="p-smaller">A well-formatted CV is key.</p>
+                    </div>
                 </div>
             </li>
             
@@ -52,24 +57,34 @@
               <div class="timeline-image"><i class="fa-regular desktop-only fa-pen-to-square" style="font-size:70px; margin-top:40px;"></i></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4 class="subheading">4. Read our Blog & join our groups!</h4>
+                        <h4 class="subheading">Reminders!</h4>
                     </div>
-                    <div class="timeline-body"><p class="text-muted">Read our <%= link_to 'Blog', blogs_path, class: 'btn btn-white' %> or Join our <i class="fa-brands fa-whatsapp"> </i><%= link_to ' Whatsapp', new_mailform_path, class: 'msg-link' %>
+                    <p class="p-smaller">
+                        stay up to date:
+                    </p>
 
-                     and <i class="fa-brands fa-telegram"></i><%= link_to ' Telegram', new_mailform_path, class: 'msg-link'%> groups & subscribe to our <%= link_to 'Mailing List ', new_mailform_path, class: 'btn btn-white ' %>
-                 to receive weekly update messages on deadlines & new opportunities.
+                    <%= link_to 'Blog', blogs_path, class: 'btn btn-white w-100' %>
+                    <div class="mt-3">
+                        <%= link_to new_mailform_path, class: 'btn btn-white w-100 msg-link', style: "max-height:40px;" do %>   
+                        <p>Whatsapp Group <i class="fa-brands fa-whatsapp"> </i></p>   
+                        <% end %> 
+                    </div>
+                    <div class="mt-3">
+                        <%= link_to new_mailform_path, class: 'btn btn-white w-100 msg-link',style: "max-height:40px;" do %>   
+                        <p>Telegram Group <i class="fa-brands fa-telegram"></i></p>   
+                        <% end %> 
+                    </div>
 
-                     
-                </div>
+                    <p class="p-smaller p-1"><strong>Only the admin writes </strong> (to avoid spam) </p>
                 </div>
             </li>
             <li>
                 <div class="timeline-image"><i class="fa-solid desktop-only fa-mobile-screen" style="font-size:70px; margin-top:40px;"></i></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4 class="subheading">5. Book a call!</h4>
+                        <%= link_to 'Get in touch', new_coachingrequest_path, class: 'btn btn-white w-100' %>
                     </div>
-                    <div class="timeline-body"><p class="text-muted">Do you want to talk to someone who has a top tier job and first hand experience?  <%= link_to 'Get in touch', new_coachingrequest_path, class: 'btn btn-white' %></p></div>
+                    <div class="timeline-body p-1"><p class="p-smaller">Do you want to talk to someone who has a top tier job and first hand experience?</p></div>
 
                      
                 </div>
@@ -84,5 +99,8 @@
     .desktop-only{
       display:none;
       }
+}
+.p-smaller{
+    font-size:15px;
 }
 </style>

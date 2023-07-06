@@ -1,12 +1,23 @@
 <br>
 <h2 class="text-center">
-  UK/EU Finance Jobs & Internships
+  Find <strong>relevant</strong> finance opportunities
 </h2>
-<h6 class="text-center">
-	A focused and all-encompassing overview of EU/UK high finance job roles for juniors (up to associate)
-</h6>
+
+<br>
+<button class="btn mobile-only w-100 btn-white" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">+ What is this?</button>
+
+
+         
+<div class="collapse -only" id="collapseExample1">
+  <p class="container">
+    A focused and all-encompassing overview of EU/UK high finance job roles for juniors (up to associate). Make sure to take advantage of <strong>spring & insight internships!</strong>
+  </p>
+</div>
+
 
 <% if current_user and current_user.admin == true %>
+<br>
+<br>
     <%= link_to 'Add UK Finance Job', new_ukfinancejob_path, class: 'btn btn-primary btn-dark' %>
 <% end %>
 
@@ -59,7 +70,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"><%= ukfinancejob.title %></h5>
-          <a style="color: blue;" class="card-text no-style " href="#{ukfinancejob.type_of_job}"><strong>
+          <a style="color: blue;" class="card-text no-style " href="<%=ukfinancejob.url%>" target="_blank"><strong>
           Career Link</strong></a>
           <br>
           <br>
