@@ -85,7 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_222050) do
     t.string "url"
     t.string "type_of_job"
     t.string "location"
-    t.string "deadline_date"
+    t.datetime "deadline_date"
     t.boolean "rolling_admission"
     t.string "description"
   end
