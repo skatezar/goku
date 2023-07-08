@@ -83,11 +83,23 @@
     <%= link_to meeting_path(meeting) do %>
     <i class="fa-regular fa-circle-dot" style="color: red;">
      </i>
-     <%= cl_image_tag meeting.photo1.key, height: 50, width: 50, crop: :fill %>
+     <%= cl_image_tag meeting.photo1.key, height: 40, width: 40, crop: :fill %>
      <% end %>
      
     </div>
   <% end %>
+  <br>
+    <div class="d-flex justify-content-center">
+      <i class="fa-solid fa-location-dot" style="margin-top:4px; font-size:12px;"></i>
+      <p style="margin-left:2px; margin-top:2px; font-size:12px;">
+        <%= meeting.location %>
+      </p>
+    </div>
+    <div class="d-flex justify-content-center italic_small" style="margin-top:-12px;">  
+      <p class="text-center">
+        <%= meeting.start_time.hour %>:<%= meeting.start_time.min %> (UK)
+      </p>
+    </div>
 
   <% end %>
 <% end %>
