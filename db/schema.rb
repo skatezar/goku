@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_05_222050) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_09_192349) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -88,6 +88,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_222050) do
     t.datetime "deadline_date"
     t.boolean "rolling_admission"
     t.string "description"
+    t.datetime "application_opening_date"
+    t.string "eligibility"
+    t.string "industry"
+    t.string "hr_email"
+    t.string "app_process"
   end
 
   create_table "users", force: :cascade do |t|

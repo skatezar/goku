@@ -1,38 +1,64 @@
-<!-- app/views/ukfinancejobs/edit.html.erb -->
-<h1>Edit UK Finance Job</h1>
+<!-- app/views/ukfinancejobs/new.html.erb -->
+<h1>Edit Job</h1>
 
-<%= form_with(model: @ukfinancejob, url: ukfinancejob_path(@ukfinancejob), class: 'ukfinancejob-form', method: 'patch') do |form| %>
+<%= form_with(model: @ukfinancejob, url: ukfinancejobs_path, class: 'ukfinancejob-form') do |form| %>
   <div class="form-group">
     <%= form.label :title %>
     <%= form.text_field :title, class: 'form-control' %>
   </div>
-
+  <br>
   <div class="form-group">
     <%= form.label :url %>
     <%= form.text_field :url, class: 'form-control' %>
   </div>
-
+  <br>
   <div class="form-group">
     <%= form.label :type_of_job %>
     <%= form.text_field :type_of_job, class: 'form-control' %>
   </div>
-
+  <br>
   <div class="form-group">
     <%= form.label :location %>
     <%= form.text_field :location, class: 'form-control' %>
   </div>
-
+  <br>
+  <div class="form-group">
+    <%= form.label :application_opening_date %>
+    <%= form.date_field :application_opening_date, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= form.label :eligibility %>
+    <%= form.text_field :eligibility, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= form.label :industry %>
+    <%= form.text_field :industry, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= form.label :hr_email %>
+    <%= form.text_field :hr_email, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= form.label :app_process %>
+    <%= form.text_field :app_process, class: 'form-control' %>
+  </div>
+  <br>
   <div class="form-group">
     <%= form.label :deadline_date %>
-    <%= form.text_field :deadline_date, class: 'form-control' %>
+    <%= form.date_field :deadline_date, class: 'form-control' %>
   </div>
-
+  <br>
   <div class="form-group">
     <%= form.label :rolling_admission %>
     <%= form.check_box :rolling_admission %>
   </div>
-
+  
+  <br>
   <div class="actions">
-    <%= form.submit 'Update UK Finance Job', class: 'btn btn-primary' %>
+    <%= form.submit 'Update Job', class: 'btn btn-green d-flex' %>
   </div>
 <% end %>
