@@ -37,7 +37,9 @@
               
               <tr>
                 <% if user_signed_in? %>
-
+                  <div style="margin-left:10px;"> 
+                      <a href="">My account</a>
+                </div>
                 <% else %>
                 <div style="margin-left:10px;"> 
                       <%= link_to "Login", new_user_session_path, class: "btn-dark btn border-light" %>
@@ -57,7 +59,9 @@
 <span class="desktop-only">
   
 <% if user_signed_in? %>
-
+  <div style="margin-left:10px;"> 
+        <a href="">My account</a>
+  </div>
 <% else %>
 <div>
 <%= link_to "Login", new_user_session_path, class: "btn-dark btn border-light" %>
