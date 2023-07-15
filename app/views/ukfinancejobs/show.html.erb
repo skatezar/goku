@@ -2,7 +2,20 @@
 <div class="desktop-only">
   <div class="container d-flex justify-content-center">
     <div class="m-3">
-      <h1><%= @ukfinancejob.title %></h1>
+      <h1 class="text-center"><%= @ukfinancejob.title %></h1>
+      <h5 class="text-center">Application Status: 
+      <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
+      <span style="color: #118C4F">
+        OPEN
+      </span>  
+      </h4>
+      <% else %>
+      <span style="color: red">
+        CLOSED
+      </span>
+      </h5>
+      <% end %>
+
       <div class="ukfinancejob-details">
         <p><strong>Type of Job:</strong> <%= @ukfinancejob.type_of_job %></p>
         <p><strong>Location:</strong> <%= @ukfinancejob.location %></p>
@@ -28,6 +41,18 @@
   <div class="container d-flex justify-content-center">
     <div>
       <h5 class="text-center w-100"><%= @ukfinancejob.title %></h5>
+      <h6 class="text-center">Application Status: 
+      <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
+      <span style="color: #118C4F">
+        OPEN
+      </span>  
+      </h6>
+      <% else %>
+      <span style="color: red">
+        CLOSED
+      </span>
+      </h5>
+      <% end %>
       <div class="mt-3 d-flex justify-content-center"> 
         <%= cl_image_tag @ukfinancejob.photo.key, height: 100, crop: :fill %>
       </div>
@@ -61,3 +86,46 @@
 
 </div>
 <% end %>
+
+
+<!-- job comments -->
+
+<div class="container m-">
+  
+<h4 class="text-center">Comments</h4>
+
+<% @ukfinancejob.comments.each do |comment| %>
+  <div class=" m-3 p-2 round-border">
+    <p>
+      <%= comment.content %>  
+    </p>
+    <p>
+      <i class="fa-sharp fa-regular fa-user"></i> <%= link_to comment.user.email.split("@").first, profile_path(comment.user), class: "no-style" %>
+      <span style="font-size:12px;">
+        on <%= comment.created_at.strftime("%e %B %Y") %>  
+      </span>
+    </p>
+  </div>
+  <hr>
+<% end %>
+
+<% if current_user.present? %>
+    <%= form_with(model: [@ukfinancejob, Comment.new], url: ukfinancejob_comments_path(@ukfinancejob)) do |form| %>
+    <div> 
+      <%= form.text_area :content, placeholder: 'Enter your comment', class: "d-flex w-100" %>
+    </div>
+    <div>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
+    <br>
+    <%= form.submit 'Add Comment', class: "btn btn-green w-100" %>
+  <% end %>
+<% else %>
+<p>
+  <%= link_to 'Login', new_user_session_path, class: 'btn btn-white' %>
+  to comment
+</p>
+<% end %>
+
+</div>
+

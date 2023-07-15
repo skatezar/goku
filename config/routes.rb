@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get 'aboutus', to: 'pages#aboutus', as: :aboutus
   get 'networking', to: 'pages#networking', as: :networking
   get 'request submission', to: 'pages#requestsubmission', as: :requestsubmission
-  resources :ukfinancejobs
+  resources :ukfinancejobs do 
+    resources :comments
+  end
   get 'interviews', to: 'pages#interviews', as: :interview
   get '/downloads/:filename', to: 'downloads#download', as: 'download_file'
   # Defines the root path route ("/")
