@@ -12,11 +12,25 @@ class ProfilesController < ApplicationController
 		@profile = Profile.new(profile_params)
 		@profile.user_id = current_user.id
 		@user = current_user
-
 		if @profile.save
 			redirect_to root_path
 		else
 			render :new
+		end
+	end
+
+	def edit
+		@user = current_user
+		@profile = Profile.find_by(user_id: current_user.id)
+  	end
+
+	def update
+		@profile = Profile.find_by(user_id: current_user.id)
+		@user = current_user
+		if @profile.update(profile_params)
+			redirect_to @profile
+		else
+			render :edit
 		end
 	end
 

@@ -13,8 +13,25 @@
 	<i class="fa-sharp fa-regular fa-user"></i>	
 </div>
 
-<%= @profile.bio %>
-<%= @profile.linkedin %>
+<br>
+<p class="text-center"> <strong>
+	Bio
+</strong></p>
+<p class="text-center"> 
+	<%= @profile.bio %>	
+</p>
+
+<p class="text-center">  <strong>
+	Linkedin
+</strong></p>
+<p class="text-center"> 
+	<%= @profile.linkedin %>		
+</p>
+
+<div class="d-flex justify-content-center">
+	<%= link_to "Edit Profile", edit_profile_path, class: "btn-white btn border-light" %>	
+</div>
+
 
 </body>
 </html>
