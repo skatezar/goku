@@ -2,7 +2,7 @@ class UkfinancejobsController < ApplicationController
   before_action :set_ukfinancejob, only: [:show, :edit, :update, :destroy]
 
   def index
-    @ukfinancejobs = Ukfinancejob.all
+    @ukfinancejobs = Ukfinancejob.order(:application_opening_date)
      # Initialize filter options
     @locations = Ukfinancejob.pluck(:location).uniq
     @types_of_job = Ukfinancejob.pluck(:type_of_job).uniq

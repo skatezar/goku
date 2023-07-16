@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :mailform
   resources :blogs
   get 'CV', to: 'pages#CV', as: :cv
+  get 'meetingfilter', to: 'pages#meetingfilter', as: :meetingfilter
   resources :coachingrequests
   get 'aboutus', to: 'pages#aboutus', as: :aboutus
   get 'networking', to: 'pages#networking', as: :networking

@@ -526,3 +526,24 @@ input[type="checkbox"] {
     transform: scale(2.5); /* Adjust the scale value as needed */
     margin-left: 30px; /* Add spacing between checkbox and label */
   }
+
+   .form-control{
+    
+  }
+
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .checkbox-container input[type="checkbox"] {
+    transform: scale(2.5); /* Adjust the scale value as needed */
+    margin-right: 10px; /* Add spacing between checkbox and label */
+  }
+
+  .checkbox-container label {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: #555; /* Adjust the color as needed */
+    font-weight: bold; /* Add font weight as desired */
+    padding-left:5px;
+  }
