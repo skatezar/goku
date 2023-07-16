@@ -19,19 +19,27 @@
 </strong></p>
 <p class="text-center"> 
 	<%= @profile.bio %>	
+	<% if @profile.bio.present? == false %>
+		<p class="italic text-center">No bio added</p>
+	<% end %>
 </p>
 
 <p class="text-center">  <strong>
 	Linkedin
 </strong></p>
 <p class="text-center"> 
-	<%= @profile.linkedin %>		
+	<%= @profile.linkedin %>
+	<% if @profile.linkedin.present? == false %>
+		<p class="italic text-center">No linkedin added</p>
+	<% end %>		
 </p>
 
-<div class="d-flex justify-content-center">
-	<%= link_to "Edit Profile", edit_profile_path, class: "btn-white btn border-light" %>	
-</div>
+<% if @profile.user_id == current_user.id %>
 
+	<div class="d-flex justify-content-center">
+		<%= link_to "Edit Profile", edit_profile_path(@profile.user_id), class: "btn-white btn border-light" %>
+	</div>
+<% end %>
 
 </body>
 </html>

@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   resources :meetings do 
     resources :meetingcomments
   end
-  resources :profiles
+  resources :profiles, except: [:edit]
+  patch '/profiles/:id', to: 'profiles#update', as: 'update_profile'
+  get '/profiles/:id/edit', to: 'profiles#edit', as: 'edit_profile'
+  
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root 'pages#index'

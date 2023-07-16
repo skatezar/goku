@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :profile
+
+  after_create :create_profile
+
+  private
+
+  def create_profile
+    build_profile.save
+  end
 end

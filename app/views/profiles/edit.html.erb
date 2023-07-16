@@ -1,7 +1,7 @@
 <div class="container">
 <h5 class="text-center">Update Profile</h5>	
 
-<%= form_with(model: @profile, url: profiles_path, class: 'ukfinancejob-form') do |form| %>
+<%= form_with(model: @profile, url: update_profile_path(@profile), method: :patch, class: 'ukfinancejob-form') do |form| %>
   <div class="form-group">
     <%= form.label :bio %>
     <%= form.text_field :bio, class: 'form-control' %>

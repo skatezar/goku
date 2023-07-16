@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
 	def show
-		@profile = Profile.find_by(params[:user_id])
+		@profile = Profile.find(params[:id])
 	end
 
 	def new
@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
 		@profile.user_id = current_user.id
 		@user = current_user
 		if @profile.save
-			redirect_to profile_path(@profile)
+			redirect_to profile_path(current_user.id)
 		else
 			render :new
 		end
