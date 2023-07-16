@@ -13,9 +13,11 @@ Rails.application.routes.draw do
   get 'aboutus', to: 'pages#aboutus', as: :aboutus
   get 'networking', to: 'pages#networking', as: :networking
   get 'request submission', to: 'pages#requestsubmission', as: :requestsubmission
-  resources :ukfinancejobs do 
+  resources :ukfinancejobs, except: [:edit] do 
     resources :comments
   end
+  patch '/ukfinancejobs/:id', to: 'ukfinancejobs#update', as: 'update_ukfinancejob'
+  get '/ukfinancejobs/:id/edit', to: 'ukfinancejobs#edit', as: 'edit_ukfinancejob'
   get 'interviews', to: 'pages#interviews', as: :interview
   get '/downloads/:filename', to: 'downloads#download', as: 'download_file'
   # Defines the root path route ("/")

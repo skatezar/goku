@@ -33,6 +33,7 @@ class UkfinancejobsController < ApplicationController
   end
 
   def edit
+    @ukfinancejob = Ukfinancejob.find(params[:id])
   end
 
   def update
