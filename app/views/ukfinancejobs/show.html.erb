@@ -4,17 +4,22 @@
     <div class="m-3">
       <h1 class="text-center"><%= @ukfinancejob.title %></h1>
       <h5 class="text-center">Application Status: 
-      <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
-      <span style="color: #118C4F">
-        OPEN
-      </span>  
-      </h4>
-      <% else %>
-      <span style="color: red">
-        CLOSED
-      </span>
-      </h5>
+        <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
+        <span style="color: #118C4F">
+          OPEN
+        </span>
+        <% elsif Date.today < @ukfinancejob.application_opening_date %>
+        <span style="color: #89CFF0;">
+          NOT YET OPEN
+        </span>  
+        <% else %>
+        <span style="color: red">
+          CLOSED
+        </span>
+
       <% end %>
+      </h5>
+
 
       <div class="ukfinancejob-details">
         <p><strong>Type of Job:</strong> <%= @ukfinancejob.type_of_job %></p>
@@ -47,12 +52,17 @@
         OPEN
       </span>  
       </h6>
+      <% elsif Date.today < @ukfinancejob.application_opening_date %>
+        <span style="color: #89CFF0;">
+          NOT YET OPEN
+        </span>  
       <% else %>
       <span style="color: red">
         CLOSED
       </span>
-      </h5>
       <% end %>
+      </h5>
+      
       <div class="mt-3 d-flex justify-content-center"> 
         <%= cl_image_tag @ukfinancejob.photo.key, height: 100, crop: :fill %>
       </div>
