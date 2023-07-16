@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :meetings
+  resources :meetings do 
+    resources :meetingcomments
+  end
   resources :profiles
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

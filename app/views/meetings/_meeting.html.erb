@@ -47,7 +47,7 @@
   <div class="d-flex justify-content-center">
     <strong>  
       <a href="<%= meeting.link_to_url %>" class="no-style btn-white p-2 round-border" target="_blank">  
-        More info
+        REGISTER NOW
       </a>
     </strong>
   </div>
@@ -79,7 +79,7 @@
   <div class="d-flex justify-content-center">
     <strong>  
       <a href="<%= meeting.link_to_url %>" class="no-style btn-white p-2 round-border" target="_blank">  
-        More info
+        REGISTER NOW
       </a>
     </strong>
   </div>
@@ -87,3 +87,47 @@
 </section>
 
 </div>
+
+
+<!-- job comments -->
+
+<div class="container m-">
+  
+<h4 class="text-center">Comments</h4>
+<br>
+
+<% @meeting.meetingcomments.each do |comment| %>
+  <div class=" m-3 p-2 round-border">
+    <p>
+      <%= comment.content %>  
+    </p>
+    <p>
+      <i class="fa-sharp fa-regular fa-user"></i> <%= link_to comment.user.email.split("@").first, profile_path(comment.user), class: "no-style" %>
+      <span style="font-size:12px;">
+        on <%= comment.created_at.strftime("%e %B %Y") %>  
+      </span>
+    </p>
+  </div>
+  <hr>
+<% end %>
+
+<% if current_user.present? %>
+    <%= form_with(model: [@meeting, Meetingcomment.new], url: meeting_meetingcomments_path(@meeting)) do |form| %>
+    <div> 
+      <%= form.text_area :content, placeholder: 'Enter your comment', class: "d-flex w-100" %>
+    </div>
+    <div>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
+    <br>
+    <%= form.submit 'Add Comment', class: "btn btn-green w-100" %>
+  <% end %>
+<% else %>
+<p>
+  <%= link_to 'Login', new_user_session_path, class: 'btn btn-white' %>
+  to comment
+</p>
+<% end %>
+
+</div>
+
