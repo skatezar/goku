@@ -83,7 +83,10 @@
     <%= link_to meeting_path(meeting) do %>
     <i class="fa-regular fa-circle-dot" style="color: red;">
      </i>
-     <%= cl_image_tag meeting.photo1.key, height: 40, width: 40, crop: :fill %>
+     <div class="d-flex justify-content-center">
+      <%= cl_image_tag meeting.photo1.key, height: 40, width: 40, crop: :fill %> 
+     </div>
+     
      <% end %>
      
     </div>
