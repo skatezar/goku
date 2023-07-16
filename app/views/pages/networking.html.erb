@@ -59,14 +59,14 @@
 
     <br>
     <div class="d-flex justify-content-center">
-      <i class="fa-solid fa-location-dot"></i>
-      <p style="margin-left:10px; margin-top: -3px;">
+      <i style="margin-left:1px; margin-top: -15px;" class="fa-solid fa-location-dot"></i>
+      <p style="margin-left:10px; margin-top: -18px;">
         <%= meeting.location %>
       </p>
     </div>
-    <div class="d-flex justify-content-center italic_small" style="margin-top:-12px;">  
+    <div class="d-flex justify-content-center italic_small" style="margin-top:-12px; font-size: 14px;">  
       <p>
-        <%= meeting.start_time.hour %>:<%= meeting.start_time.min %> (UK time)
+        <%= meeting.name %>
       </p>
     </div>
 
