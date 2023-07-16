@@ -13,6 +13,12 @@
   </div>
   <br>
   <div class="form-group">
+    <%= form.label :company %>
+    <%= form.text_field :company, class: 'form-control' %>
+  </div>
+
+  <br>  
+  <div class="form-group">
     <%= form.label :type_of_job %>
     <%= form.text_field :type_of_job, class: 'form-control' %>
   </div>
@@ -24,7 +30,15 @@
   <br>
   <div class="form-group">
     <%= form.label :application_opening_date %>
+    <p class="italic_small">provide guess if not available</p>
     <%= form.date_field :application_opening_date, class: 'form-control' %>
+  </div>
+  <br>
+
+   <div class="field">
+    <p>Are you guessing opening date?
+    <%= form.check_box :guesstimate %>
+    </p>
   </div>
   <br>
   <div class="form-group">
@@ -70,3 +84,11 @@
     <%= form.submit 'Create UK Finance Job', class: 'btn btn-green d-flex' %>
   </div>
 <% end %>
+
+
+<style type="text/css">
+  input[type="checkbox"] {
+    transform: scale(2.5); /* Adjust the scale value as needed */
+    margin-left: 30px; /* Add spacing between checkbox and label */
+  }
+</style>

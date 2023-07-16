@@ -2,7 +2,10 @@
 <h2 class="text-center">
   Find <strong>relevant</strong> finance opportunities
 </h2>
+<h5 class="text-center heartbeat-text" style="color: green;">
+  <%= Ukfinancejob.all.count %> jobs posted
 
+</h5>
 <br>
 <button class="btn mobile-only w-100 btn-green" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">+ What is this?</button>
 
@@ -36,6 +39,15 @@
   <%= select_tag :type_of_job, options_for_select([["Select type of job", ""]].concat(@types_of_job), params[:type_of_job]), { class: "form-control" } %>
   </div>
 
+  <div class="col-md-3 p-3">
+    <%= select_tag :company, options_for_select([["Select company", ""]].concat(@companies), params[:company]), { class: "form-control" } %>
+  </div>
+
+  <div class="col-md-3 p-3 checkbox-container">
+    <%= check_box_tag :application_opening_date_filter, 'true', params[:application_opening_date_filter] == 'true' %>
+    <%= label_tag :application_opening_date_filter, ' Open applications only' %>
+  </div>
+
   <!--
   <div class="col-md-3 p-3">
   <%= label_tag :rolling_admission, "Rolling Admission" %>
@@ -61,6 +73,14 @@
   </div>
   <div class="col-md-3 p-3 w-100">
   <%= select_tag :type_of_job, options_for_select([["Select type of job", ""]].concat(@types_of_job), params[:type_of_job]), { class: "form-control w-100" } %>
+  </div>
+  <div class="col-md-3 p-3 w-100">
+    <%= select_tag :company, options_for_select([["Select company", ""]].concat(@companies), params[:company]), { class: "form-control" } %>
+  </div>
+
+  <div class="col-md-3 p-3 checkbox-container">
+    <%= check_box_tag :application_opening_date_filter, 'true', params[:application_opening_date_filter] == 'true' %>
+    <%= label_tag :application_opening_date_filter, ' Open applications only' %>
   </div>
 
   <!--
@@ -115,4 +135,22 @@
   .form-control{
     
   }
+
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .checkbox-container input[type="checkbox"] {
+    transform: scale(2.5); /* Adjust the scale value as needed */
+    margin-right: 10px; /* Add spacing between checkbox and label */
+  }
+
+  .checkbox-container label {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: #555; /* Adjust the color as needed */
+    font-weight: bold; /* Add font weight as desired */
+    padding-left:5px;
+  }
+
 </style>

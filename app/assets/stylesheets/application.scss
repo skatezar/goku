@@ -505,3 +505,19 @@ body {
   .italic{ 
   font-style: italic;
   }
+
+   @keyframes heartbeat {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.2;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .heartbeat-text {
+      animation: heartbeat 3s infinite;
+    }
