@@ -1,3 +1,4 @@
+
 <button class="btn mobile-only btn-white" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">MENU</button>
          
   <div class="collapse mobile-only" id="collapseExample">       
@@ -14,13 +15,14 @@
               </tr>
               <br>  
               <tr>
+                <%= link_to "Job Finder", ukfinancejobs_path, class: "btn header-link"  %>
+              </tr>
+              <br>
+              <tr>
                 <%= link_to "CV Template", cv_path, class: "btn header-link" %>  
               </tr>
               <br> 
-              <tr>
-                <%= link_to "Job Filter", ukfinancejobs_path, class: "btn header-link"  %>
-              </tr>
-              <br>
+              
               <!--
               <tr>
                 <%= link_to "Blogs", blogs_path, class: "btn header-link" %>
@@ -88,7 +90,7 @@
     <%= link_to "Networking Calendar", networking_path %>  
   </li>
   <li>
-    <%= link_to "Job Filter", ukfinancejobs_path %>
+    <%= link_to "Job Finder", ukfinancejobs_path %>
   </li>
   <!--
   <li>
@@ -104,9 +106,6 @@
 </ul>
 
 </nav>
-
-
-
 
 
 

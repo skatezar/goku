@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
 	def index
+		@ukfinancejobs = Ukfinancejob.order(:application_opening_date)
+		@newjobs = @ukfinancejobs.where('application_opening_date BETWEEN ? AND ?', Date.today, 1.week.from_now)
+		@events = Meeting.where('start_time BETWEEN ? AND ?', Date.today, 1.week.from_now)
+
 	end
 
 	def CV
