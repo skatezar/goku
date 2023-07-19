@@ -20,3 +20,10 @@
 		height: 50px;
 	}
 </style>
+
+
+
+
+<% if current_user and current_user.admin == true %>
+  <%= link_to "ADMIN", mailform_index_path,  class: "btn btn-white" %>
+<% end %>

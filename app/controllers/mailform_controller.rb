@@ -1,5 +1,6 @@
 class MailformController < ApplicationController
 	def index
+		@emails = Mailform.all
 	end
 	
 	def new
