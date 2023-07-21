@@ -19,6 +19,13 @@ Rails.application.routes.draw do
   get 'request submission', to: 'pages#requestsubmission', as: :requestsubmission
   resources :ukfinancejobs, except: [:edit] do 
     resources :comments
+    member do
+      post 'favorite', to: 'ukfinancejobs#favorite'
+      delete 'unfavorite', to: 'ukfinancejobs#unfavorite'
+    end
+    collection do
+      get 'favorites', to: 'ukfinancejobs#favorites'
+    end
   end
   patch '/ukfinancejobs/:id', to: 'ukfinancejobs#update', as: 'update_ukfinancejob'
   get '/ukfinancejobs/:id/edit', to: 'ukfinancejobs#edit', as: 'edit_ukfinancejob'

@@ -13,4 +13,7 @@ class User < ApplicationRecord
   def create_profile
     build_profile.save
   end
+
+  has_many :favorites
+  has_many :favorite_ukfinancejobs, through: :favorites, source: :ukfinancejob
 end

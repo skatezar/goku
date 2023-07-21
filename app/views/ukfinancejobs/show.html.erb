@@ -2,6 +2,13 @@
 <div class="desktop-only">
   <div class="container d-flex justify-content-center">
     <div class="m-3">
+       <% if user_signed_in? %>
+        <% if current_user.favorite_ukfinancejobs.include?(@ukfinancejob) %>
+          <%= button_to 'Job Saved', unfavorite_ukfinancejob_path(@ukfinancejob), method: :delete, class: "btn btn-grey" %>
+        <% else %>
+          <%= button_to 'Save Job', favorite_ukfinancejob_path(@ukfinancejob), method: :post, class: "btn btn-green"%>
+        <% end %>
+      <% end %>
       <h1 class="text-center"><%= @ukfinancejob.title %></h1>
       <h5 class="text-center">Application Status: 
         <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
@@ -160,4 +167,6 @@
 <% end %>
 
 </div>
+
+
 

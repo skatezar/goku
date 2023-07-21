@@ -34,6 +34,7 @@
 	<% end %>		
 </p>
 
+
 <% if @profile.user_id == current_user.id %>
 
 	<div class="d-flex justify-content-center">
@@ -41,5 +42,11 @@
 	</div>
 <% end %>
 
-</body>
-</html>
+
+
+
+<% @favorite_ukfinancejobs.each do |job| %>
+
+<%= job.title %>
+
+<% end %>

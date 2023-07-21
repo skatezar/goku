@@ -21,6 +21,23 @@ class UkfinancejobsController < ApplicationController
     end
   end
 
+  def favorite
+    @ukfinancejob = Ukfinancejob.find(params[:id])
+    current_user.favorite_ukfinancejobs << @ukfinancejob
+    redirect_to @ukfinancejob, notice: 'UK finance job has been favorited!'
+    
+  end
+
+  def unfavorite
+    @ukfinancejob = Ukfinancejob.find(params[:id])
+    current_user.favorite_ukfinancejobs.delete(@ukfinancejob)
+    redirect_to @ukfinancejob, notice: 'UK finance job has been unfavorited.'
+  end
+
+  def favorites
+    @favorite_ukfinancejobs = current_user.favorite_ukfinancejobs
+  end
+
   def show
   end
 

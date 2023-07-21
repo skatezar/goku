@@ -1,0 +1,14 @@
+<!-- app/views/ukfinancejobs/favorites.html.erb -->
+<h1>Your Favorite UK Finance Jobs</h1>
+
+<% if current_user.favorite_ukfinancejobs.any? %>
+  <ul>
+    <% current_user.favorite_ukfinancejobs.each do |ukfinancejob| %>
+      <li><%= link_to ukfinancejob.title, ukfinancejob_path(ukfinancejob) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You haven't favorited any UK finance jobs yet.</p>
+<% end %>
+
+<%= link_to 'Back to All UK Finance Jobs', ukfinancejobs_path %>

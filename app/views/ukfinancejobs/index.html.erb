@@ -111,6 +111,7 @@
       <div class="d-flex justify-content-center mt-3"> 
         <%= cl_image_tag ukfinancejob.photo.key, height: 75, crop: :fill %>
       </div>
+
       <p class="text-center mt-2"> <%= ukfinancejob.location %></p>
       <p class="text-center italic italic_small" style="margin-top: -15px;">Apply by <%= ukfinancejob.deadline_date.day %> <%= t('date.abbr_month_names')[ukfinancejob.deadline_date.month] %> <%= ukfinancejob.deadline_date.year %></p>
       

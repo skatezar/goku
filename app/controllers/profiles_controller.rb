@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
 	def show
 		@profile = Profile.find(params[:id])
+		@favorite_ukfinancejobs = current_user.favorite_ukfinancejobs
 	end
 
 	def new
