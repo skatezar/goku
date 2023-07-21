@@ -34,13 +34,23 @@
     <%= form.date_field :application_opening_date, class: 'form-control' %>
   </div>
   <br>
-
    <div class="field">
     <p>Are you guessing opening date?
     <%= form.check_box :guesstimate %>
     </p>
   </div>
   <br>
+  <div class="form-group">
+    <%= form.label :deadline_date %>
+    <p class="italic_small">provide guess if not available</p>
+    <%= form.date_field :deadline_date, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="field">
+    <p>Are you guessing deadline date?
+    <%= form.check_box :guesstimate_deadline %>
+    </p>
+  </div>
   <div class="form-group">
     <%= form.label :eligibility %>
     <%= form.text_field :eligibility, class: 'form-control' %>
@@ -59,11 +69,6 @@
   <div class="form-group">
     <%= form.label :app_process %>
     <%= form.text_field :app_process, class: 'form-control' %>
-  </div>
-  <br>
-  <div class="form-group">
-    <%= form.label :deadline_date %>
-    <%= form.date_field :deadline_date, class: 'form-control' %>
   </div>
   <br>
   <div class="form-group">
