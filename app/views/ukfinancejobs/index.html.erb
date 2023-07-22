@@ -101,39 +101,28 @@
   </form>
 </div>
 
-
-<div class="" style="width:100%;">
-  <div class="row d-flex  justify-content-center">
-    
-      <% @ukfinancejobs.each do |ukfinancejob| %>
-      <div class="col-6" style="background-color: white; border: 1px solid black; padding: 5px; width:165px; margin: 5px;">
-      <h6 class="text-center bold"><%= ukfinancejob.title %></h6>
-      <div class="d-flex justify-content-center mt-3"> 
-        <%= cl_image_tag ukfinancejob.photo.key, height: 75, crop: :fill %>
-      </div>
-
-      <p class="text-center mt-2"> <%= ukfinancejob.location %></p>
-      <p class="text-center italic italic_small" style="margin-top: -15px;">Apply by <%= ukfinancejob.deadline_date.day %> <%= t('date.abbr_month_names')[ukfinancejob.deadline_date.month] %> <%= ukfinancejob.deadline_date.year %></p>
-      
-      <%= link_to 'View', ukfinancejob_path(ukfinancejob), class: 'btn btn-green', style: 'width: 100%' %>
-      </div>
-      <% if current_user and current_user.admin == true %>
-            <br>
-            <br>
-            <div>
-              <%= link_to 'Edit', edit_ukfinancejob_path(ukfinancejob), class: 'btn btn-primary w-100' %>  
-            </div>
-            <br>
-            <br> 
-            <div>
-              <%= button_to 'Delete', ukfinancejob_path(ukfinancejob), method: :delete, class: 'btn btn-danger w-100', data: { confirm: 'Are you sure you want to delete this job?' }, form: { "data-remote": true } %>  
-            </div>
-            
-          <% end %>
-      <% end %>
-    
-  </div>
-</div>
           
 
+
+
+
+<div class="card-container" style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center;">
+  <% @ukfinancejobs.each do |ukfinancejob| %>
+    <div class="card" style="background-color: white; border: 1px solid black; padding: 5px; width: 155px; height: 250px; margin: 5px; display: flex; flex-direction: column; justify-content: space-between;">
+      <div style="flex: 1;">
+        <h6 class="text-center bold" style="max-height: 2.5em; height: 2.5em; overflow: hidden;"><%= ukfinancejob.title %></h6>
+        <div class="d-flex justify-content-center mt-3">
+          <%= cl_image_tag ukfinancejob.photo.key, height: 75, crop: :fill %>
+        </div>
+      </div>
+
+      <div style="flex: 1;">
+        <p class="text-center mt-2" style="max-height: 1.5em; overflow: hidden;"><%= ukfinancejob.location %></p>
+        <p class="text-center italic italic_small" style="margin-top: -15px;">Apply by <%= ukfinancejob.deadline_date.day %> <%= t('date.abbr_month_names')[ukfinancejob.deadline_date.month] %> <%= ukfinancejob.deadline_date.year %></p>
+      </div>
+      
+      <%= link_to 'View', ukfinancejob_path(ukfinancejob), class: 'btn btn-green', style: 'width: 100%' %>
+    </div>
+  <% end %>
+</div>
 
