@@ -34,9 +34,6 @@
   <form id="filterForm" action="<%= ukfinancejobs_path %>" method="get">
     <div class="form-row">
       <div class="col-md-3 p-3">
-        <%= select_tag :location, options_for_select([["Select location", ""]].concat(@locations), params[:location]), { class: "form-control" } %>
-      </div>
-      <div class="col-md-3 p-3">
       <%= select_tag :type_of_job, options_for_select([["Select type of job", ""]].concat(@types_of_job), params[:type_of_job]), { class: "form-control" } %>
       </div>
 
@@ -81,9 +78,6 @@
   <br>
   <form action="<%= ukfinancejobs_path %>" method="get">
     <div class="form-row">
-    <div class="col-md-3 p-3 w-100">
-    <%= select_tag :location, options_for_select([["Select location", ""]].concat(@locations), params[:location]), { class: "form-control w-100" } %>
-  </div>
   <div class="col-md-3 p-3 w-100">
   <%= select_tag :type_of_job, options_for_select([["Select type of job", ""]].concat(@types_of_job), params[:type_of_job]), { class: "form-control w-100" } %>
   </div>
@@ -101,13 +95,8 @@
     <%= label_tag :diversity_filter, ' Diversity Event', class: 'form-check-label' %>
   </div>
 
-  <!--
-  <div class="col-md-3 p-3">
-  <%= label_tag :rolling_admission, "Rolling Admission" %>
-  <%= select_tag :rolling_admission, options_for_select([["Select rolling admission", ""], ['All', ''], ['Yes', 'true'], ['No', 'false']], params[:rolling_admission]), class: "form-control" %>
   </div>
-  -->
-    </div>
+  <br>
     <div class="d-flex justify-content-center">
       <%= submit_tag "Filter", class: "btn-dark w-100 btn btn-primary",  style: "width: 20%;" %>  
     </div>
