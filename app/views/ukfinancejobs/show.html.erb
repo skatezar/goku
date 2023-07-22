@@ -1,7 +1,7 @@
 <br>
 <div class="desktop-only">
   <div class="container d-flex justify-content-center">
-    <div class="m-3">
+    <div>
        <% if user_signed_in? %>
         <% if current_user.favorite_ukfinancejobs.include?(@ukfinancejob) %>
           <%= button_to unfavorite_ukfinancejob_path(@ukfinancejob), method: :delete, class: "btn large-text" do %>
@@ -39,7 +39,9 @@
       <% end %>
       </h5>
 
-
+    <div class="d-flex justify-content-center" style="margin-top: -40px;"> 
+      <%= cl_image_tag @ukfinancejob.photo.key, class: "mt-5", height: 100, crop: :fill %>
+    </div>
       <div class="ukfinancejob-details">
         <p><strong>Type of Job:</strong> <%= @ukfinancejob.type_of_job %></p>
         
@@ -74,9 +76,7 @@
       </div>  
     </div>
     
-    <div class="m-3"> 
-      <%= cl_image_tag @ukfinancejob.photo.key, class: "mt-5", height: 200, crop: :fill %>
-    </div>
+    
   </div>
 </div>
 
