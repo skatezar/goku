@@ -42,11 +42,26 @@
 	</div>
 <% end %>
 
+<br>
 
+<h5 class="text-center"><i class="fa-solid fa-star"></i> Saved Jobs</h5>
 
+<div class="" style="width:100%;">
+  <div class="row d-flex  justify-content-center">
+    
+      <% @favorite_ukfinancejobs.each do |ukfinancejob| %>
+      <div class="col-6" style="background-color: white; border: 1px solid black; padding: 5px; width:165px; margin: 5px;">
+      <h6 class="text-center bold"><%= ukfinancejob.title %></h6>
+      <div class="d-flex justify-content-center mt-3"> 
+        <%= cl_image_tag ukfinancejob.photo.key, height: 75, crop: :fill %>
+      </div>
 
-<% @favorite_ukfinancejobs.each do |job| %>
-
-<%= job.title %>
-
-<% end %>
+      <p class="text-center mt-2"> <%= ukfinancejob.location %></p>
+      <p class="text-center italic italic_small" style="margin-top: -15px;">Apply by <%= ukfinancejob.deadline_date.day %> <%= t('date.abbr_month_names')[ukfinancejob.deadline_date.month] %> <%= ukfinancejob.deadline_date.year %></p>
+      
+      <%= link_to 'View', ukfinancejob_path(ukfinancejob), class: 'btn btn-green', style: 'width: 100%' %>
+      </div>
+      <% end %>
+    
+  </div>
+</div>
