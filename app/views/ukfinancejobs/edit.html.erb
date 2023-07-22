@@ -21,12 +21,15 @@
   <br>  
   <div class="form-group">
     <%= form.label :type_of_job %>
-    <%= form.select :type_of_job, options_for_select(['Summer Internship', 'Off-Cycle Internship', 'Full-time entry level', 'Insight Internship', 'Apprenticeship', 'Work Placement']), {}, class: 'form-control' %>
+    <%= form.select :type_of_job, options_for_select(['Summer Internship', 'Off-Cycle Internship', 'Full-time entry level', 'Insight Internship', 'Apprenticeship', 'Work Placement'], @ukfinancejob.type_of_job), {}, class: 'form-control' %>
+
   </div>
+
   <br>
   <div class="form-group">
     <%= form.label :field_in_finance %>
-    <%= form.select :field_in_finance, options_for_select(['Bulge Bracket', 'Hedge Fund', 'Asset Manager', 'Private Equity', 'Elite Boutique', 'Trading/Market Makers', 'Other']), {}, class: 'form-control' %>
+    <%= form.select :field_in_finance, options_for_select(['Bulge Bracket', 'Hedge Fund', 'Asset Manager', 'Private Equity', 'Elite Boutique', 'Trading/Market Makers', 'Other'], @ukfinancejob.field_in_finance), {}, class: 'form-control' %>
+
   </div>
   <br>
   <div class="form-group">
