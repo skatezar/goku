@@ -44,10 +44,6 @@
     <%= select_tag :company, options_for_select([["Select company", ""]].concat(@companies), params[:company]), { class: "form-control" } %>
   </div>
 
-  <div class="col-md-3 p-3 checkbox-container">
-    <%= check_box_tag :application_opening_date_filter, 'true', params[:application_opening_date_filter] == 'true' %>
-    <%= label_tag :application_opening_date_filter, ' Open applications only' %>
-  </div>
 
   <!--
   <div class="col-md-3 p-3">
@@ -56,6 +52,20 @@
   </div>
   -->
     </div>
+    <div class="filter-container">
+      <div class="form-row">
+        
+        <div class="col-md-3 p-3 checkbox-container">
+          <%= check_box_tag :application_opening_date_filter, 'true', params[:application_opening_date_filter] == 'true', class: 'form-check-input' %>
+          <%= label_tag :application_opening_date_filter, 'Applications Open', class: 'form-check-label' %>
+        </div>
+        <div class="form-check checkbox-container">
+          <%= check_box_tag :diversity_filter, 'true', params[:diversity_filter] == 'true', class: 'form-check-input' %>
+          <%= label_tag :diversity_filter, 'Diversity Event', class: 'form-check-label' %>
+        </div>
+      </div>
+    </div>
+    
     <div class="d-flex justify-content-center">
       <%= submit_tag "Filter", class: "btn-dark btn btn-primary",  style: "width: 20%;" %>  
     </div>
@@ -106,7 +116,7 @@
 
 
 
-<div class="card-container" style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center;">
+<div class="card-container" id="cardContainer" style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center;">
   <% @ukfinancejobs.each do |ukfinancejob| %>
     <div class="card" style="background-color: white; border: 1px solid black; padding: 5px; width: 155px; height: 250px; margin: 5px; display: flex; flex-direction: column; justify-content: space-between;">
       <div style="flex: 1;">
@@ -125,9 +135,6 @@
     </div>
   <% end %>
 </div>
-
-
-
 
 <style>
   /* Add this CSS style block within the <head> section of your HTML or in a separate CSS file */

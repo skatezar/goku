@@ -26,7 +26,12 @@
   <br>
   <div>
     <%= form.label :industry, style: "display: block" %>
-    <%= form.text_field :industry, class: 'form-control' %>
+    <%= form.select :industry, options_for_select(['Sell side', 'Buy side']), {}, class: 'form-control' %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :eligibility, style: "display: block" %>
+    <%= form.text_field :eligibility, class: 'form-control' %>
   </div>
   <br>
   <div>
