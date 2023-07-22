@@ -21,7 +21,7 @@
   <br>  
   <div class="form-group">
     <%= form.label :type_of_job %>
-    <%= form.text_field :type_of_job, class: 'form-control' %>
+    <%= form.select :type_of_job, options_for_select(['Summer Internship', 'Off-Cycle Internship', 'Full-time entry level', 'Insight Internship', 'Apprenticeship', 'Work Placement']), {}, class: 'form-control' %>
   </div>
   <br>
   <div class="form-group">
