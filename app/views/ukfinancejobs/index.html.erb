@@ -31,7 +31,7 @@
 
 <div class="filter-container desktop-only">
   <br>
-  <form action="<%= ukfinancejobs_path %>" method="get">
+  <form id="filterForm" action="<%= ukfinancejobs_path %>" method="get">
     <div class="form-row">
     <div class="col-md-3 p-3">
     <%= select_tag :location, options_for_select([["Select location", ""]].concat(@locations), params[:location]), { class: "form-control" } %>
@@ -207,3 +207,18 @@
     margin-top: auto;
   }
 </style>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const filterForm = document.getElementById("filterForm");
+    const filterButtons = filterForm.querySelectorAll("[type='submit'], [reset='true']");
+
+    filterButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        filterForm.reset();
+      });
+    });
+  });
+</script>
