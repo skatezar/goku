@@ -80,15 +80,7 @@
   </div>
 </div>
 
-<% if current_user and current_user.admin == true %>
 
-<div class="d-flex justify-content-around"> 
-<%= link_to 'Edit', edit_ukfinancejob_path(@ukfinancejob), class: 'btn btn-primary' %>
-
-<%= button_to 'Delete', ukfinancejob_path(@ukfinancejob), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this job?' }, form: { "data-remote": true } %>
-
-</div>
-<% end %>
 
 <div class="mobile-only">
   <div class="container d-flex justify-content-center">
