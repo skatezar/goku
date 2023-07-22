@@ -91,9 +91,14 @@
     <%= select_tag :company, options_for_select([["Select company", ""]].concat(@companies), params[:company]), { class: "form-control" } %>
   </div>
 
-  <div class="col-md-3 p-3 checkbox-container">
-    <%= check_box_tag :application_opening_date_filter, 'true', params[:application_opening_date_filter] == 'true' %>
-    <%= label_tag :application_opening_date_filter, ' Open applications only' %>
+  <div class="col-md-3 p-3 checkbox-container w-100">
+    <%= check_box_tag :application_opening_date_filter, 'true', params[:application_opening_date_filter] == 'true', class: 'form-check-input' %>
+    <%= label_tag :application_opening_date_filter, 'Open applications only',  class: 'form-check-label' %>
+  </div>
+  <br>
+  <div class="col-md-3 p-3 checkbox-container w-100">
+    <%= check_box_tag :diversity_filter, 'true', params[:diversity_filter] == 'true', class: 'form-check-input' %>
+    <%= label_tag :diversity_filter, ' Diversity Event', class: 'form-check-label' %>
   </div>
 
   <!--
