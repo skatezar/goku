@@ -2,7 +2,7 @@
 <h1>Edit Job</h1>
 <p> DO NOT LEAVE ANY FIELDS BLANK; copy and paste them from the career sites</p>
 
-<%= form_with(model: @ukfinancejob, url: ukfinancejobs_path, class: 'ukfinancejob-form') do |form| %>
+<%= form_with(model: @ukfinancejob, url: ukfinancejob_path(@ukfinancejob), class: 'ukfinancejob-form') do |form| %>
   <div class="form-group">
     <%= form.label :title %>
     <%= form.text_field :title, class: 'form-control' %>
