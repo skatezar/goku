@@ -5,6 +5,8 @@ ruby "3.2.2"
 
 gem "cloudinary"
 
+gem 'pg_search'
+
 gem "dotenv-rails"
 
 gem 'devise'
@@ -86,5 +88,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
 
 

@@ -27,6 +27,10 @@ class UkfinancejobsController < ApplicationController
     if params[:field_in_finance].present?
       @ukfinancejobs = @ukfinancejobs.where(field_in_finance: params[:field_in_finance])
     end
+
+    if params[:search].present?
+      @ukfinancejobs = @ukfinancejobs.search_by_keyword(params[:search])
+    end
   end
 
   def favorite

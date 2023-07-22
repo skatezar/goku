@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_22_195915) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_22_231655) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -139,6 +139,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_22_195915) do
     t.boolean "guesstimate_deadline", default: false
     t.boolean "diversity", default: false
     t.string "field_in_finance"
+    t.tsvector "searchable"
+    t.index ["searchable"], name: "index_ukfinancejobs_on_searchable", using: :gin
   end
 
   create_table "users", force: :cascade do |t|
