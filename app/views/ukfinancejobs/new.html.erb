@@ -32,7 +32,7 @@
   <br>
   <div class="form-group">
     <%= form.label :location %>
-    <%= form.text_field :location, class: 'form-control' %>
+    <%= form.select :location, options_for_select(['London, UK', 'Worldwide',]), {}, class: 'form-control' %>
   </div>
   <br>
   <div class="form-group">
