@@ -8,6 +8,8 @@ class UkfinancejobsController < ApplicationController
     @types_of_job = Ukfinancejob.pluck(:type_of_job).uniq
     @deadline_dates = Ukfinancejob.pluck(:deadline_date).uniq
     @companies = Ukfinancejob.pluck(:company).uniq
+    @fields_in_finance = Ukfinancejob.pluck(:field_in_finance).uniq
+
 
     # Apply filters if provided in params
     @ukfinancejobs = @ukfinancejobs.where(location: params[:location]) if params[:location].present?
@@ -22,8 +24,9 @@ class UkfinancejobsController < ApplicationController
 
     @ukfinancejobs = @ukfinancejobs.where(diversity: true) if params[:diversity_filter] == 'true'
 
-
-
+    if params[:field_in_finance].present?
+      @ukfinancejobs = @ukfinancejobs.where(field_in_finance: params[:field_in_finance])
+    end
   end
 
   def favorite
@@ -84,6 +87,6 @@ class UkfinancejobsController < ApplicationController
   end
 
   def ukfinancejob_params
-    params.require(:ukfinancejob).permit(:application_opening_date, :eligibility, :industry, :hr_email, :app_process, :photo, :title, :url, :type_of_job, :location, :deadline_date,  :rolling_admission, :company, :guesstimate, :description, :guesstimate_deadline, :diversity)
+    params.require(:ukfinancejob).permit(:application_opening_date, :eligibility, :industry, :hr_email, :app_process, :photo, :title, :url, :type_of_job, :location, :deadline_date,  :rolling_admission, :company, :guesstimate, :description, :guesstimate_deadline, :diversity, :field_in_finance)
   end
 end

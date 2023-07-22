@@ -44,13 +44,15 @@
     <%= select_tag :company, options_for_select([["Select company", ""]].concat(@companies), params[:company]), { class: "form-control" } %>
   </div>
 
-
-  <!--
   <div class="col-md-3 p-3">
-  <%= label_tag :rolling_admission, "Rolling Admission" %>
-  <%= select_tag :rolling_admission, options_for_select([["Select rolling admission", ""], ['All', ''], ['Yes', 'true'], ['No', 'false']], params[:rolling_admission]), class: "form-control" %>
+    <%= select_tag :field_in_finance, options_for_select([
+      ["Select field in finance", ""],
+      *(@fields_in_finance.map { |field| [field, field] })
+    ], params[:field_in_finance]), class: "form-control" %>
   </div>
-  -->
+  
+  </div>
+  
     </div>
     <div class="filter-container">
       <div class="form-row">

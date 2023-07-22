@@ -25,6 +25,11 @@
   </div>
   <br>
   <div class="form-group">
+    <%= form.label :field_in_finance %>
+    <%= form.select :field_in_finance, options_for_select(['Bulge Bracket', 'Hedge Fund', 'Asset Manager', 'Elite Boutique', 'Trading/Market Makers', 'Other']), {}, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
     <%= form.label :location %>
     <%= form.text_field :location, class: 'form-control' %>
   </div>
@@ -61,11 +66,6 @@
     <p>Diversity event?
     <%= form.check_box :diversity %>
     </p>
-  </div>
-  <br>
-  <div class="form-group">
-    <%= form.label :industry %>
-    <%= form.select :industry, options_for_select(['Sell side', 'Buy side']), {}, class: 'form-control' %>
   </div>
   <br>
   <div class="form-group">
