@@ -2,7 +2,7 @@
 <button class="btn mobile-only btn-white" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">MENU</button>
 
          
-  <div class="collapse mobile-only" id="collapseExample">       
+  <div class="collapse mobile-only" id="collapseExample" style="background-color: rgba(239, 239, 240); margin:10px;">       
             <table  class="table table-hover table-condensed  " >
             <thead>
               <tr>
@@ -28,11 +28,12 @@
               <tr>
                 <%= link_to "Blogs", blogs_path, class: "btn header-link" %>
               </tr>
-            -->
+
               <tr>
                 <%= link_to "1-1 Coaching", new_coachingrequest_path, class: "btn header-link" %>
               </tr>
               <br>
+               -->
               <tr>
                 <%= link_to "About Us", aboutus_path, class: "btn header-link" %>
               </tr>
@@ -97,10 +98,11 @@
   <li>
     <%= link_to "Blogs", blogs_path %>
   </li> 
--->
+
   <li>
     <%= link_to "1-1 Coaching", new_coachingrequest_path %>
   </li>
+  -->
   <li>
     <%= link_to "About Us", aboutus_path %>
   </li>
@@ -113,7 +115,6 @@
 
 <style type="text/css">
   .header-link{
-    text-decoration: underline;
     font-size:18px;
   }
   .header-link:hover{
@@ -122,5 +123,4 @@
 </style>
 
 <hr>
-
 
