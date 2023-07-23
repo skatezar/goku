@@ -52,7 +52,7 @@
         <p><strong>Application Opening:</strong> <%= @ukfinancejob.application_opening_date.day %> <%= t('date.abbr_month_names')[@ukfinancejob.application_opening_date.month] %> <%= @ukfinancejob.application_opening_date.year %>
           <% if @ukfinancejob.guesstimate == true %>
           <strong class="italic_small" style="color: red;">
-            unconfirmed / this is a guess
+            unconfirmed / predicted based on last years opening
           </strong>
           <% end %>
 
@@ -60,7 +60,7 @@
         <p><strong>Application Deadline:</strong> <%= @ukfinancejob.deadline_date.day %> <%= t('date.abbr_month_names')[@ukfinancejob.deadline_date.month] %> <%= @ukfinancejob.deadline_date.year %>
         <% if @ukfinancejob.guesstimate_deadline == true %>
           <strong class="italic_small" style="color: red;">
-            unconfirmed / this is a guess
+            unconfirmed / predicted based on last years deadline
           </strong>
           <% end %>
           </p>
@@ -146,12 +146,12 @@
         <p><strong>Location:</strong> <%= @ukfinancejob.location %></p>
         <p><strong>Application Opening:</strong> <%= @ukfinancejob.application_opening_date.day %> <%= t('date.abbr_month_names')[@ukfinancejob.application_opening_date.month] %> <%= @ukfinancejob.application_opening_date.year %>
         <strong class="italic_small" style="color: red;">
-            unconfirmed / this is a guess
+            unconfirmed / predicted based on last years opening
           </strong>
         </p>
         <p><strong>Application Deadline:</strong> <%= @ukfinancejob.deadline_date.day %> <%= t('date.abbr_month_names')[@ukfinancejob.deadline_date.month] %> <%= @ukfinancejob.deadline_date.year %>
         <strong class="italic_small" style="color: red;">
-            unconfirmed / this is a guess
+            unconfirmed / predicted based on last years deadline
           </strong> </p>
         <p><strong>Rolling Admission:</strong> <%= @ukfinancejob.rolling_admission ? 'Yes' : 'No' %></p>
         <p><strong>Eligibility:</strong> <%= @ukfinancejob.eligibility %></p>
