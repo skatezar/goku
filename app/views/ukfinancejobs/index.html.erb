@@ -87,6 +87,13 @@
     <%= select_tag :company, options_for_select([["Select company", ""]].concat(@companies), params[:company]), { class: "form-control" } %>
   </div>
 
+  <div class="col-md-3 p-3 w-100">
+        <%= select_tag :field_in_finance, options_for_select([
+          ["Select field in finance", ""],
+          *(@fields_in_finance.map { |field| [field, field] })
+        ], params[:field_in_finance]), class: "form-control" %>
+      </div>
+
   <div class="col-md-3 p-3 checkbox-container w-100">
     <%= check_box_tag :application_opening_date_filter, 'true', params[:application_opening_date_filter] == 'true', class: 'form-check-input' %>
     <%= label_tag :application_opening_date_filter, 'Open applications only',  class: 'form-check-label' %>
