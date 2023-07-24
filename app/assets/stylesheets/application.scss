@@ -569,3 +569,38 @@ input[type="checkbox"] {
 
 
 
+
+
+
+.btn {
+  /* Add common styles for buttons here */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+/* Bounce animation on hover */
+.btn:hover {
+  animation: bounce 0.5s;
+}
+
+/* Bounce animation on click */
+.btn:active {
+  animation: bounce 0.3s;
+}
+
+/* Keyframes animation for bouncing */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}

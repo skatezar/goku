@@ -1,5 +1,8 @@
 
-<button class="btn mobile-only btn-green" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">MENU</button>
+<button class="btn mobile-only btn-green" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <span class="burger-icon"></span>
+</button>
+
 
          
   <div class="collapse mobile-only" id="collapseExample" style="background-color: rgba(239, 239, 240); margin:10px;">       
@@ -81,7 +84,7 @@
 <%= link_to "HIRE-UP", root_path, class: "no-style" %>
 </h1>
 <div class="sub-header">
-<h6>How to Really Find a Job within Finance (UK & Europe)</h6>
+<h6 style="font-size:15px;">How to Really Find a Job within Finance (UK & Europe)</h6>
 </div>
 <nav class="desktop-only">
 <ul>
@@ -113,17 +116,58 @@
 
 
 
-<style type="text/css">
-  .header-link{
-    font-size:18px;
-  }
-  .header-link:hover{
-    opacity: 0.5;
-  }
+
+
+<style type="text/css"> 
+/* Add these styles to create the burger icon */
+.burger-icon {
+  display: inline-block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: transform 0.3s;
+}
+
+/* Add this style to rotate the top and bottom lines of the burger icon on click */
+.btn.btn-green[aria-expanded="true"] .burger-icon {
+  transform: rotate(45deg);
+}
+
+/* Add this style to hide the middle line of the burger icon on click */
+.btn.btn-green[aria-expanded="true"] .burger-icon::before {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  transform: rotate(-90deg);
+}
+
+/* Add these styles to create the burger icon */
+.burger-icon {
+  display: inline-block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: transform 0.3s;
+}
+
+/* Add this style to rotate the lines of the burger icon on click */
+.btn.btn-green[aria-expanded="true"] .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.btn.btn-green[aria-expanded="true"] .line:nth-child(2) {
+  opacity: 0;
+}
+
+.btn.btn-green[aria-expanded="true"] .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
 </style>
 
 <hr>
-
-
-
-

@@ -216,5 +216,29 @@
 
     animateBanner(); // Start the animation
   });
+
+// JavaScript code to lazy load elements
+const lazyElements = document.querySelectorAll('.lazy');
+
+const lazyLoad = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Load the content when it becomes visible
+      entry.target.classList.remove('lazy');
+      observer.unobserve(entry.target);
+    }
+  });
+};
+
+const lazyObserver = new IntersectionObserver(lazyLoad, {
+  root: null,
+  threshold: 0.2 // Adjust the threshold as needed for when to load the content
+});
+
+lazyElements.forEach(element => {
+  lazyObserver.observe(element);
+});
+
+
 </script>
 
