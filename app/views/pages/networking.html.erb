@@ -53,6 +53,7 @@
 
   <% meetings.each do |meeting| %>
     <%= link_to meeting_path(meeting) do %>
+
     <i class="fa-regular fa-circle-dot" style="color: red;">
      </i>
      <br>
@@ -79,7 +80,6 @@
 <% end %> 
 </div>
 
-
 <div class="mobile-only">
   <%= month_calendar(events: @meetings) do |date, meetings| %>
   <%= date.day %>
@@ -88,6 +88,7 @@
     <%= link_to meeting_path(meeting) do %>
     <i class="fa-regular fa-circle-dot" style="color: red;">
      </i>
+
      <div class="d-flex justify-content-center">
       <%= cl_image_tag meeting.photo1.key, height: 40, width: 40, crop: :fill %> 
      </div>
