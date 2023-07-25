@@ -1,11 +1,9 @@
 
-<button class="btn mobile-only btn-green" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+<button class="btn-non-bounce mobile-only btn-green" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="toggleDropdown">
   <span class="burger-icon"></span>
 </button>
-
-
          
-  <div class="collapse mobile-only" id="collapseExample" style="background-color: rgba(239, 239, 240); margin:10px;">       
+  <div class="collapse bounce-this-slow mobile-only" id="collapseExample" style="background-color: rgba(239, 239, 240); margin:10px;">       
             <table  class="table table-hover table-condensed  " >
             <thead>
               <tr>
@@ -80,7 +78,8 @@
     
 <% end %>
 </span>
-<h1 class="text-center no-style mt-3">
+<section class="fae-this .collapse.show.bouncy-element"> 
+  <h1 class="text-center no-style mt-3">
 <%= link_to "HIRE-UP", root_path, class: "no-style" %>
 </h1>
 <div class="sub-header">
@@ -112,6 +111,7 @@
 </ul>
 
 </nav>
+</section>
 
 
 
@@ -168,6 +168,18 @@
 .btn.btn-green[aria-expanded="true"] .line:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
-</style>
 
+.btn-non-bounce{
+    padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.header-link{
+  font-size:17px;
+}
+</style>
 <hr>

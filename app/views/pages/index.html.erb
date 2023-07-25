@@ -23,7 +23,7 @@
 
 
 <br>
-<section class="page-section" id="about" style="margin-top:-100px;">
+<section class="page-section fade-this" id="animated-div" style="margin-top:-100px;">
     <div class="container">
         <ul class="timeline">
             <li>
@@ -121,6 +121,7 @@
                     <p class="p-smaller p-1"><strong>Only the admin writes </strong> (to avoid spam) </p>
                 </div>
             </li>
+            <!--
             <li>
                 <div class="timeline-image">
                     <p class="desktop-only" style="font-size:50px; margin-top:25%">
@@ -139,6 +140,7 @@
                      
                 </div>
             </li>
+        -->
         </ul>
     </div>
 </section>
@@ -153,92 +155,8 @@
 .p-smaller{
     font-size:15px;
 }
-</style>
 
-
-
-
-
-<style type="text/css">
- /* Styles for the banner container with static background color */
-.banner-container {
-  overflow: hidden;
-  width: 100%;
-  height: 50px;
-  background-color: #3cb371; /* Money Green background color */
-}
-
-/* Styles for the moving banner */
-.moving-banner {
-  display: flex;
-  width: fit-content;
-  animation: moveBanner linear infinite;
-  transform: translateX(100%); /* Start position (object is outside the right edge) */
-  width: 100%;
-}
-
-/* Styles for the object inside the banner */
-.banner-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff; /* White text color */
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 5px; /* Rounded corners for the object */
-  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background for the object */
-}
-
-/* CSS animation for the moving banner */
-@keyframes moveBanner {
-  0% {
-    transform: translateX(100%); /* Start position (object is outside the right edge) */
-  }
-  100% {
-    transform: translateX(-100%); /* End position (object moves to the left and goes outside the left edge) */
-  }
-}
 
 </style>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function() {
-    function animateBanner() {
-      const bannerWidth = $('.banner-container').width();
-      const objectWidth = $('.banner-item').outerWidth(true);
-      const duration = (bannerWidth + objectWidth) * 10; // Adjust the multiplier to control animation speed
-
-      $('.moving-banner').css('animation', 'moveBanner ' + duration + 'ms linear infinite');
-      $('.moving-banner').css('transform', 'translateX(0%)'); // Update the transform property to start the banner-item at the very right
-    }
-
-    animateBanner(); // Start the animation
-  });
-
-// JavaScript code to lazy load elements
-const lazyElements = document.querySelectorAll('.lazy');
-
-const lazyLoad = (entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Load the content when it becomes visible
-      entry.target.classList.remove('lazy');
-      observer.unobserve(entry.target);
-    }
-  });
-};
-
-const lazyObserver = new IntersectionObserver(lazyLoad, {
-  root: null,
-  threshold: 0.2 // Adjust the threshold as needed for when to load the content
-});
-
-lazyElements.forEach(element => {
-  lazyObserver.observe(element);
-});
-
-
-</script>
 

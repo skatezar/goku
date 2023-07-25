@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  root 'pages#index'
+  root 'pages#index', as: 'root'
   resources :mailform
   resources :blogs
   get 'CV', to: 'pages#CV', as: :cv
