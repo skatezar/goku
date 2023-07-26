@@ -5,10 +5,10 @@ class UkfinancejobsController < ApplicationController
     @ukfinancejobs = Ukfinancejob.order(:application_opening_date)
      # Initialize filter options
     @locations = Ukfinancejob.pluck(:location).uniq
-    @types_of_job = Ukfinancejob.pluck(:type_of_job).uniq
+    @types_of_job = Ukfinancejob.pluck(:type_of_job).uniq.sort
     @deadline_dates = Ukfinancejob.pluck(:deadline_date).uniq
-    @companies = Ukfinancejob.pluck(:company).uniq
-    @fields_in_finance = Ukfinancejob.pluck(:field_in_finance).uniq
+    @companies = Ukfinancejob.pluck(:company).uniq.sort
+    @fields_in_finance = Ukfinancejob.pluck(:field_in_finance).uniq.sort
 
 
     # Apply filters if provided in params

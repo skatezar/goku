@@ -8,4 +8,3 @@ import "controllers"
 //= require turbolinks
 //= require_tree .
 
-
