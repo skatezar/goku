@@ -63,20 +63,7 @@
 
 
 <span class="desktop-only">
-  
-<% if user_signed_in? %>
-    <% if Profile.find_by(user_id: current_user.id).present? %>
-      <div style="margin-left:10px;"> 
-          <%= link_to "Profile", profile_path(current_user.id), class: "btn-dark btn border-light" %>
-      </div>
-    <% end %>
-<% else %>
-<div>
-<%= link_to "Login", new_user_session_path, class: "btn-dark btn border-light" %>
-</div>
-<br>
-    
-<% end %>
+
 </span>
 <section class="fae-this .collapse.show.bouncy-element"> 
   <h1 class="text-center no-style mt-3">
@@ -108,6 +95,22 @@
   <li>
     <%= link_to "About Us", aboutus_path %>
   </li>
+  <% if user_signed_in? %>
+    <% if Profile.find_by(user_id: current_user.id).present? %>
+    <li>
+      <div style="margin-left:10px;"> 
+          <%= link_to "Profile", profile_path(current_user.id), class: "btn-dark btn border-light" %>
+      </div>
+    </li>
+    <% end %>
+<% else %>
+<li>
+  <div>
+  <%= link_to "Login", new_user_session_path, class: "btn-dark btn border-light" %>
+  </div>
+  
+</li>
+<% end %>
 </ul>
 
 </nav>
@@ -180,6 +183,8 @@
 
 .header-link{
   font-size:17px;
+
 }
 </style>
 <hr>
+

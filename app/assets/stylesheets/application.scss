@@ -645,11 +645,11 @@ input[type="checkbox"] {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0); /* Bounce keyframes: return to original position */
   }
-  40% {
-    transform: translateY(-15px); /* Bounce keyframe: move up */
+  10% {
+    transform: translateY(-35px); /* Bounce keyframe: move up */
   }
-  60% {
-    transform: translateY(-10px); /* Bounce keyframe: move down slightly */
+  30% {
+    transform: translateY(-20px); /* Bounce keyframe: move down slightly */
   }
 }
 
