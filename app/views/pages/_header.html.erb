@@ -3,7 +3,7 @@
   <span class="burger-icon"></span>
 </button>
          
-  <div class="collapse bounce-this-slow mobile-only" id="collapseExample" style="background-color: rgba(239, 239, 240); margin:10px;">       
+  <div class="collapse bounce-this-slow mobile-only" id="collapseExample" style="background-color: rgba(239, 239, 240); margin-top:10px;">       
             <table  class="table table-hover table-condensed  " >
             <thead>
               <tr>
@@ -13,17 +13,30 @@
             <tbody>
               <br>
               <tr>
-                  <%= link_to "Networking Calendar", networking_path, class: "btn header-link" %>  
+                <span style="margin-left:10px; margin-right:-15px;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </span>
+                  <%= link_to "Job Filter", ukfinancejobs_path, class: "btn header-link"  %>
+                  
               </tr>
-              <br>  
+              <hr>
               <tr>
-                <%= link_to "Job Finder", ukfinancejobs_path, class: "btn header-link"  %>
+                <span style="margin-left:10px; margin-right:-15px;">
+                    <i class="fa-regular fa-calendar"></i>
+                  </span>
+                <%= link_to "Networking Calendar", networking_path, class: "btn header-link" %>
+                
               </tr>
-              <br>
+              <hr>
               <tr>
+                <span style="margin-left:10px; margin-right:-15px;">
+                  <i class="fa-regular fa-file-word"></i>
+                </span>
                 <%= link_to "CV Template", cv_path, class: "btn header-link" %>  
+                
               </tr>
-              <br> 
+
+              <hr>
               
               <!--
               <tr>
@@ -36,15 +49,23 @@
               <br>
                -->
               <tr>
+                <span style="margin-left:10px; margin-right:-15px;">
+                  <i class="fa-solid fa-address-card"></i>
+                </span>
                 <%= link_to "About Us", aboutus_path, class: "btn header-link" %>
+                
               </tr>
               <br>
               <br>
-              
               <tr>
                 <% if user_signed_in? %>
                     <div style="margin-left:10px;"> 
-                        <%= link_to "Profile", profile_path(current_user.id), class: "btn-dark btn border-light" %>
+                        <%= link_to profile_path(current_user.id), class: "btn-dark btn border-light" do %>
+                        <span class="p-2">
+                          <i class="fa-solid fa-user"></i> Profile  
+                        </span>
+                        
+                        <% end %>
                     </div>
                 <% else %>
                 <div style="margin-left:10px;"> 
@@ -185,6 +206,39 @@
   font-size:17px;
 
 }
+
+.collapse{
+width: 100%;
+}
+
+.header-link{
+  font-size:16px;
+}
+
+.blur-effect {
+  filter: blur(5px);
+}
 </style>
 <hr>
 
+
+<div class="background" id="background">
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  var burgerButton = document.querySelector(".btn-non-bounce.mobile-only");
+  var contentToBlur = document.querySelectorAll("body > :not(.collapse)");
+  var isBlurEnabled = false;
+
+  burgerButton.addEventListener("click", function() {
+    isBlurEnabled = !isBlurEnabled;
+    contentToBlur.forEach(function(element) {
+      if (isBlurEnabled) {
+        element.classList.add("blur-effect");
+      } else {
+        element.classList.remove("blur-effect");
+      }
+    });
+  });
+});
+</script>
