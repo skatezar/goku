@@ -46,11 +46,8 @@
 </div>
 
 <div class="desktop-only">
-
 <%= calendar(number_of_days: 30, events: @meetings) do |date, meetings| %>
-
   <%= date.day %>
-
   <% meetings.each do |meeting| %>
     <%= link_to meeting_path(meeting) do %>
 
@@ -115,3 +112,35 @@
 </div>
 
 <p class="italic_small text-center">click on a day for more details!</p>
+
+
+
+<script type="text/javascript">
+  // Text to search for (case-sensitive)
+  var searchText = 'Today';
+
+  // Find all anchor elements on the page
+  var allAnchors = document.getElementsByTagName('a');
+
+  // Array to store matching anchor elements
+  var matchingAnchors = [];
+
+  // Loop through all anchor elements to find the matching ones
+  for (var i = 0; i < allAnchors.length; i++) {
+    var anchorElement = allAnchors[i];
+
+    // Check if the anchor element's text matches the search text
+    if (anchorElement.textContent === searchText) {
+      // Add the matching anchor element to the array
+      matchingAnchors.push(anchorElement);
+    }
+  }
+
+  // Now matchingAnchors array contains all anchor elements with the specified text
+  // You can perform actions on each matching anchor element
+  matchingAnchors.forEach(function(anchorElement) {
+    anchorElement.style.display = 'none'; // For example, change their color
+  });
+
+  console.log('Found matching anchor elements:', matchingAnchors);
+</script>

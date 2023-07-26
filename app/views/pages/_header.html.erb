@@ -225,13 +225,12 @@ width: 100%;
 <div class="background" id="background">
 
 <script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function() {
-  var burgerButton = document.querySelector(".btn-non-bounce.mobile-only");
+// JavaScript
+function toggleBlurEffect() {
   var contentToBlur = document.querySelectorAll(".background");
   var isBlurEnabled = false;
 
-  burgerButton.addEventListener("click", function() {
-    isBlurEnabled = !isBlurEnabled;
+  function applyBlur() {
     contentToBlur.forEach(function(element) {
       if (isBlurEnabled) {
         element.classList.add("blur-effect");
@@ -239,6 +238,21 @@ document.addEventListener("DOMContentLoaded", function() {
         element.classList.remove("blur-effect");
       }
     });
+  }
+
+  var burgerButton = document.querySelector(".btn-non-bounce.mobile-only");
+  burgerButton.addEventListener("click", function() {
+    isBlurEnabled = !isBlurEnabled;
+    applyBlur();
   });
-});
+
+  // Apply the blur effect initially
+  applyBlur();
+
+  // Apply the blur effect again whenever the content is loaded via AJAX
+  document.addEventListener("DOMContentLoaded", function() {
+    applyBlur();
+  });
+}
+toggleBlurEffect();
 </script>
