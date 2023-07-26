@@ -87,10 +87,10 @@
 
 </span>
 <section class="fae-this .collapse.show.bouncy-element"> 
-  <h1 class="text-center no-style mt-3">
+  <h1 class="text-center no-style mt-3 background">
 <%= link_to "HIRE-UP", root_path, class: "no-style" %>
 </h1>
-<div class="sub-header">
+<div class="sub-header background">
 <h6 style="font-size:15px;">How to Really Find a Job within Finance (UK & Europe)</h6>
 </div>
 <nav class="desktop-only">
@@ -227,7 +227,7 @@ width: 100%;
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
   var burgerButton = document.querySelector(".btn-non-bounce.mobile-only");
-  var contentToBlur = document.querySelectorAll("body > :not(.collapse)");
+  var contentToBlur = document.querySelectorAll(".background");
   var isBlurEnabled = false;
 
   burgerButton.addEventListener("click", function() {
