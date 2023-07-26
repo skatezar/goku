@@ -37,9 +37,13 @@
                 </div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                    <%= link_to 'Networking Calendar', networking_path, class: 'btn btn-green w-100' %>
+                    <%= link_to networking_path, class: 'btn btn-green w-100' do %>
+                    <span>
+                        <i class="fa-regular fa-calendar"></i>
+                            Calendar
+                    </span>
+                    <% end %> 
                     </div>
-
                     <div class="timeline-body p-smaller p-1">
                         A calendar to find all virtual/in person finance-related networking events in Europe & London.
                     </div>
@@ -60,7 +64,14 @@
 
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <%= link_to 'Finance Job Finder', ukfinancejobs_path, class: 'btn btn-green w-100' %>
+                        
+                        <%= link_to ukfinancejobs_path, class: 'btn btn-green w-100' do %>
+                            <span>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                Job Filter
+                            </span>
+                            
+                        <% end %>
                     </div>
                     <div class="timeline-body">
                         <p class="p-smaller p-1">Find all <strong>relevant</strong> internships in finance. </p>
@@ -79,7 +90,12 @@
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4 class="subheading">
-                            <%= link_to ' CV Template', cv_path, class: 'btn-green btn w-100' %>
+                            <%= link_to cv_path, class: 'btn-green btn w-100' do %>
+                            <span>
+                              <i class="fa-regular fa-file-word"></i>
+                                CV Template
+                            </span>
+                            <% end %>
                         </h4>                      
                     </div>
                     <div class="timeline-body">
@@ -106,15 +122,20 @@
                     </p>
                     <!--
                     <%= link_to 'Blog', blogs_path, class: 'btn btn-green w-100' %>-->
-                    <%= link_to 'Email list', new_mailform_path, class: 'mt-3 btn btn-green w-100' %>
+                    <%= link_to new_mailform_path, class: 'mt-3 btn btn-green w-100' do %>
+                    <span>  
+                        <i class="fa-regular fa-envelope"></i> Email List
+                    </span>
+                    
+                    <% end %>
                     <div class="mt-3">
                         <%= link_to new_mailform_path, class: 'btn btn-green w-100 msg-link', style: "max-height:40px;" do %>   
-                        <p>Whatsapp Group <i class="fa-brands fa-whatsapp"> </i></p>   
+                        <p> <i class="fa-brands fa-whatsapp"> </i> Whatsapp Group </p>   
                         <% end %> 
                     </div>
                     <div class="mt-3">
                         <%= link_to new_mailform_path, class: 'btn btn-green w-100 msg-link',style: "max-height:40px;" do %>   
-                        <p>Telegram Group <i class="fa-brands fa-telegram"></i></p>   
+                        <p><i class="fa-brands fa-telegram"></i> Telegram Group </p>   
                         <% end %> 
                     </div>
 
