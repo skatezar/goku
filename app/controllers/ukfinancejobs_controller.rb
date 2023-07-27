@@ -8,7 +8,7 @@ class UkfinancejobsController < ApplicationController
     @types_of_job = Ukfinancejob.pluck(:type_of_job).uniq.sort
     @deadline_dates = Ukfinancejob.pluck(:deadline_date).uniq
     @companies = Ukfinancejob.pluck(:company).uniq.sort
-    @fields_in_finance = Ukfinancejob.pluck(:field_in_finance).uniq.sort
+    @fields_in_finance = Ukfinancejob.pluck(:field_in_finance).uniq
 
 
     # Apply filters if provided in params
