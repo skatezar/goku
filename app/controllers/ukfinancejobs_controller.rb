@@ -30,7 +30,7 @@ class UkfinancejobsController < ApplicationController
 
     if params[:search].present?
       @ukfinancejobs = @ukfinancejobs.search_by_keyword(params[:search])
-    end
+    end   
   end
 
   def favorite

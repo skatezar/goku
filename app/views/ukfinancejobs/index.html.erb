@@ -32,7 +32,11 @@
 <div class="filter-container desktop-only">
   <br>
   <form id="filterForm" action="<%= ukfinancejobs_path %>" method="get">
+    <div class="p-3 filter-container d-flex justify-content-center">
+        <%= text_field_tag :search, params[:search], placeholder: 'Search by keywords', class: "form-control input-txt" %>
+      </div>
     <div class="form-row">
+
       <div class="col-md-3 p-3">
       <%= select_tag :type_of_job, options_for_select([["Select type of job", ""]].concat(@types_of_job), params[:type_of_job]), { class: "form-control" } %>
       </div>
@@ -50,7 +54,7 @@
     </div>
 
     <div class="d-flex justify-content-center mb-4 mt-3">
-      
+        
         <div class="checkbox-container">
           <%= check_box_tag :application_opening_date_filter, 'true', params[:application_opening_date_filter] == 'true', class: 'form-check-input' %>
           <%= label_tag :application_opening_date_filter, 'Open Applications',  class: 'form-check-label' %>
@@ -61,15 +65,14 @@
           <%= label_tag :diversity_filter, ' Diversity Jobs', class: 'form-check-label' %>
         </div>
       </div>
-      <div class="p-3 filter-container d-flex justify-content-center">
-        <%= text_field_tag :search, params[:search], placeholder: 'Search by keyword...', class: "form-control input-txt" %>
-      </div>
+
+      
       <div class="d-flex justify-content-center">
         <%= submit_tag "Search", class: "btn-dark  btn btn-primary",  style: "width: 20%;" %>  
       </div>
 
       <div class="d-flex mt-3 justify-content-center">
-        <%= link_to "Reset Search", ukfinancejobs_path,  class: "btn btn-green" %>  </div>
+        <%= link_to "Reset Search", ukfinancejobs_path,  class: "btn btn-" %>  </div>
 
 </form>
 </div>
@@ -128,8 +131,11 @@
       <div style="flex: 1;">
         <h6 class="text-center bold" style="max-height: 2.5em; height: 2.5em; overflow: hidden;"><%= ukfinancejob.title %></h6>
         <div class="d-flex justify-content-center mt-3">
-          <%= cl_image_tag ukfinancejob.photo.key, height: 75, crop: :fill %>
+          <%= cl_image_tag ukfinancejob.photo.key, height: 70, crop: :fit %>
+
         </div>
+
+        
       </div>
 
       <div style="flex: 1;">
