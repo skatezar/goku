@@ -123,6 +123,7 @@
 
 <div class="card-container" id="cardContainer" style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center;">
   <% @ukfinancejobs.each do |ukfinancejob| %>
+  <% if ukfinancejob.present? %>
     <div class="card" style="background-color: white; border: 1px solid black; padding: 5px; width: 155px; height: 250px; margin: 5px; display: flex; flex-direction: column; justify-content: space-between;">
       <div style="flex: 1;">
         <h6 class="text-center bold" style="max-height: 2.5em; height: 2.5em; overflow: hidden;"><%= ukfinancejob.title %></h6>
@@ -138,6 +139,7 @@
       
       <%= link_to 'View', ukfinancejob_path(ukfinancejob), class: 'btn p-2 btn-green', style: 'width: 100%' %>
     </div>
+    <% end %>
   <% end %>
 </div>
 
