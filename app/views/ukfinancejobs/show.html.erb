@@ -74,6 +74,11 @@
         <p><strong>Description:</strong> <%= @ukfinancejob.description %></p>
         <a class="card-text btn btn-white w-100 mb-3" href="<%= @ukfinancejob.url%>" target="_blank"><strong>
           Link to career website</strong></a>
+          <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
+          <% else %>   
+          <strong>Given applications are not yet open, you may not find the job posting on the career site just yet.
+          </strong>      
+        <% end %>
       </div>  
     </div>
     
@@ -164,6 +169,11 @@
           <br>
           <a class="card-text btn btn-white w-100 mb-3" href="<%= @ukfinancejob.url%>" target="_blank"><strong>
           Link to career website</strong></a>
+          <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
+          <% else %>   
+          <strong>Given applications are not yet open, you may not find the job posting on the career site just yet.
+          </strong>      
+        <% end %>
       </div>  
     </div>
   </div>
