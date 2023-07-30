@@ -1,5 +1,6 @@
 class UkfinancejobsController < ApplicationController
   before_action :set_ukfinancejob, only: [:show, :edit, :update, :destroy]
+  include ActiveModel::Dirty
 
   def index
     @ukfinancejobs = Ukfinancejob.order(:application_opening_date)
@@ -72,7 +73,28 @@ class UkfinancejobsController < ApplicationController
   end
 
   def update
+    if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date 
+      @status = "OPEN"
+    elsif Date.today < @ukfinancejob.application_opening_date
+      @status = "NOT YET OPEN"
+    else
+      @status = "CLOSED"
+    end
+
+    previous_status = @status
+
     if @ukfinancejob.update(ukfinancejob_params)
+      if previous_status != 'OPEN' && Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date 
+        @favorited_jobs = Favorite.where(ukfinancejob_id: @ukfinancejob.id)
+        user_ids_that_favorited_job = []
+        @favorited_jobs.each do |job|
+          user_ids_that_favorited_job.push(job.user_id)
+        end 
+        user_ids_that_favorited_job.each do |user_id|
+          user = User.find(user_id)
+          JobNotificationMailer.job_notification(user, @ukfinancejob).deliver_now
+        end
+      end
       redirect_to @ukfinancejob, notice: 'UK finance job was successfully updated.'
     else
       render :edit
@@ -93,4 +115,7 @@ class UkfinancejobsController < ApplicationController
   def ukfinancejob_params
     params.require(:ukfinancejob).permit(:application_opening_date, :eligibility, :industry, :hr_email, :app_process, :photo, :title, :url, :type_of_job, :location, :deadline_date,  :rolling_admission, :company, :guesstimate, :description, :guesstimate_deadline, :diversity, :field_in_finance)
   end
+
+
+    
 end
