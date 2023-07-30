@@ -120,14 +120,17 @@
           <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>  
             <% else %>
             <% if current_user.favorite_ukfinancejobs.include?(@ukfinancejob) %>
+            <div class="d-flex justify-content-center">
             <%= button_to unfavorite_ukfinancejob_path(@ukfinancejob), method: :delete, class: "btn large-text" do %>
             <i class="fa-solid fa-bell"></i>
             <p class="small-text">
               Reminder set
             </p>
             <% end %>
+          </div>
 
           <% else %>
+          <div class="d-flex justify-content-center">
             <%= button_to  favorite_ukfinancejob_path(@ukfinancejob), method: :post, class: "btn large-text" do %>
             <i class="fa-regular fa-bell"></i>
             <p class="small-text">
@@ -135,6 +138,8 @@
             </p>
             <% end %>
           <% end %>  
+          </div>
+            
           <% end %>
           
 
