@@ -1,36 +1,49 @@
+
+
 <br>
-<div class="desktop-only">
-  <div class="container d-flex justify-content-center">
-    <div>
-
-      <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
-        <% else %>
-          <% if user_signed_in? %>
-          <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>  
-            <% else %>
-            <% if current_user.favorite_ukfinancejobs.include?(@ukfinancejob) %>
+<div class="desktop-only container">
+    <!-- ... Rest of the code ... -->
+<div class="d-flex" style="">
+  <div>
+    <% if user_signed_in? %>
+      <div style="display: flex; justify-content: flex-start; align-items: center; width: 100%; /* Optional: Add padding or margin as needed */">
+        <div style="width: 150px; margin-bottom: -180px;">
+          <% if current_user.favorite_ukfinancejobs.include?(@ukfinancejob) %>
             <%= button_to unfavorite_ukfinancejob_path(@ukfinancejob), method: :delete, class: "btn large-text" do %>
-            <i class="fa-solid fa-bell"></i>
-            <p class="small-text">
-              Reminder set
-            </p>
+              <i class="fa-solid fa-star"></i>
+              <p class="small-text">
+                Job Favorited
+              </p>
             <% end %>
-
           <% else %>
-            <%= button_to  favorite_ukfinancejob_path(@ukfinancejob), method: :post, class: "btn large-text" do %>
-            <i class="fa-regular fa-bell"></i>
-            <p class="small-text">
-              Set e-mail reminder for application opening date
-            </p>
+            <%= button_to favorite_ukfinancejob_path(@ukfinancejob), method: :post, class: "btn large-text" do %>
+              <i class="fa-regular fa-star"></i>
+              <p class="small-text">
+                Favorite job
+              </p>
+              <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
+              <% else %>
+                <% if user_signed_in? %>
+                  <p class="small-text">
+                    <i class="fa-regular fa-bell"></i>
+                    Also sets an e-mail reminder for when applications are open
+                  </p>
+                <% end %>
+              <% end %>
             <% end %>
-          <% end %>  
           <% end %>
-          
+        </div>
+      </div>
+      <% else %>
+      <%= link_to "Login", new_user_session_path, class: "btn-dark btn border-light" %> to favorite job & set reminder
+    <% end %>
+    <!-- ... Rest of the code ... -->
+  </div>
+</div>
+<!-- ... Rest of the code ... -->
 
-          <% else %>
-          <%= link_to "Login", new_user_session_path, class: "btn-dark btn border-light" %> to set E-mail reminders for opening dates
-        <% end %>
-      <% end %>
+
+
       <h1 class="text-center"><%= @ukfinancejob.title %></h1>
       <h5 class="text-center">Application Status: 
         <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
@@ -110,43 +123,57 @@
 
 
 <div class="mobile-only">
-  <div class="container d-flex justify-content-center">
+  <div>
 
     <div>
-      <div style="margin-top: -50px;" >
-      <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
-        <% else %>
-          <% if user_signed_in? %>
-          <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>  
-            <% else %>
-            <% if current_user.favorite_ukfinancejobs.include?(@ukfinancejob) %>
-            <div class="d-flex justify-content-center">
+      <div style="margin-top: -50px;">
+     <% if user_signed_in? %>
+     <div class="d-flex justify-content-center">
+       <% if current_user.favorite_ukfinancejobs.include?(@ukfinancejob) %>
             <%= button_to unfavorite_ukfinancejob_path(@ukfinancejob), method: :delete, class: "btn large-text" do %>
-            <i class="fa-solid fa-bell"></i>
-            <p class="small-text">
-              Reminder set
-            </p>
-            <% end %>
-          </div>
-
+              <div style="display: block; margin: auto;">
+                <i class="fa-solid fa-star"></i>
+                <p class="small-text">
+                Job Favorited
+                </p>
+                <% end %>
+              </div>  
           <% else %>
-          <div class="d-flex justify-content-center">
-            <%= button_to  favorite_ukfinancejob_path(@ukfinancejob), method: :post, class: "btn large-text" do %>
-            <i class="fa-regular fa-bell"></i>
-            <p class="small-text">
-              Set e-mail reminder for application opening date
-            </p>
-            <% end %>
-          <% end %>  
-          </div>
+     </div>
             
-          <% end %>
-          
 
-          <% else %>
-          <%= link_to "Login", new_user_session_path, class: "btn-dark btn border-light" %> to set E-mail reminders for opening dates
-        <% end %>
+            <div style="display: block; margin: auto;" >
+            <%= button_to  favorite_ukfinancejob_path(@ukfinancejob), method: :post, class: "btn large-text" do %>
+
+              <i class="fa-regular fa-star"></i>
+              <p class="small-text">
+                Favorite job
+              </p>
+               <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
+                <% else %>
+                  <% if user_signed_in? %>
+                    <p class="small-text">
+                      <i class="fa-regular fa-bell"></i>
+                      Also sets an e-mail reminder for when applications are open
+                    </p>
+                <% end %>  
+
+            <% end %>
+
+            <% end %>
+
+            <% end %>
+            <% else %>
+            <%= link_to new_user_session_path, class: "btn border-light" do %>
+              <i class="fa-regular fa-star large-text"></i> <p class="small">Favorite job</p>
+
+<% end %>
+
+<br>
+<br>
       <% end %>
+
+
       <h5 class="text-center w-100"><%= @ukfinancejob.title %></h5>
       <h6 class="text-center">Application Status: 
       <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
