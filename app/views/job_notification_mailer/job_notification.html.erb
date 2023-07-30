@@ -1,8 +1,29 @@
-<h1>JobNotification#job_notification</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applications are open - <%= @ukfinancejob.title %> <%= @ukfinancejob.company %></title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; background-color: #f9f9f9; color: #333; padding: 20px;">
+  <center>
+    <%= cl_image_tag(@ukfinancejob.photo.key, class: "mt-5", height: 25, crop: :fill) %>
+  </center>
 
-<p>
-  find me in app/views/job_notification_mailer/job_notification.html.erb
-</p>
+  <h1 style="font-size: 24px; margin-bottom: 20px; text-align: center;">Applications are open - <%= @ukfinancejob.title %> <%= @ukfinancejob.company %></h1>
 
-<%= @user.email %>
-<%= @ukfinancejob.title %>
+  <p style="margin-bottom: 20px; text-align: center;">
+    Hi!<br />
+    <br>
+    You have favorited <%= @ukfinancejob.title %> <%= @ukfinancejob.company %> on <a href="https://www.graduateflow.com" style="color: #007BFF; text-decoration: underline;">Graduate Flow</a>.
+  </p>
+
+  <p style="margin-bottom: 20px; text-align: center;">
+    Applications for this job are now open.
+  </p>
+
+  <center>
+    <%= link_to 'Link to job', ukfinancejob_url(@ukfinancejob), style: 'display: inline-block; background-color: rgb(35, 180, 205); color: #fff; text-decoration: none; text-align: center; padding: 10px 20px; border-radius: 5px;' %>
+  </center>
+</body>
+</html>
