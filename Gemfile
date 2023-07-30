@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
+gem 'letter_opener', group: :development
+
+gem 'postmark-rails'
+
 gem "cloudinary"
 
 gem 'pg_search'
