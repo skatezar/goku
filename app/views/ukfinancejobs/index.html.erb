@@ -33,10 +33,10 @@
   <br>
   <form id="filterForm" action="<%= ukfinancejobs_path %>" method="get">
     <div class="p-3 filter-container d-flex justify-content-center">
-        <%= text_field_tag :search, params[:search], placeholder: 'Search by keywords', class: "form-control input-txt" %>
+        <%= text_field_tag :search, params[:search], placeholder: 'Example: "Goldman Insight Internship"', class: "form-control input-txt" %>
       </div>
+      
     <div class="form-row">
-
       <div class="col-md-3 p-3">
       <%= select_tag :type_of_job, options_for_select([["Select type of job", ""]].concat(@types_of_job), params[:type_of_job]), { class: "form-control" } %>
       </div>
