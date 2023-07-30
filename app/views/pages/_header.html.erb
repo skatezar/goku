@@ -105,7 +105,7 @@
               <tr>
                 <% if user_signed_in? %>
                     <div style="margin-left:10px;"> 
-                        <%= link_to profile_path(current_user.id), class: "btn-dark btn border-light" do %>
+                        <%= link_to profile_path(current_user.id), class: "btn-dark btn border-light header-link-desktop" do %>
                         <span class="p-2">
                           <i class="fa-solid fa-user"></i> Profile  
                         </span>
@@ -143,13 +143,13 @@
 <nav class="desktop-only">
 <ul>
   <li>
-    <%= link_to "CV Template", cv_path %>  
+    <%= link_to "CV Template", cv_path, class: "header-link-desktop" %>  
   </li>
   <li>
-    <%= link_to "Networking Calendar", networking_path %>  
+    <%= link_to "Networking Calendar", networking_path, class: "header-link-desktop"  %>  
   </li>
   <li>
-    <%= link_to "Job Finder", ukfinancejobs_path %>
+    <%= link_to "Job Finder", ukfinancejobs_path, class: "header-link-desktop"  %>
   </li>
   <!--
   <li>
@@ -168,7 +168,11 @@
     <% if Profile.find_by(user_id: current_user.id).present? %>
     <li>
       <div style="margin-left:10px;"> 
-          <%= link_to "Profile", profile_path(current_user.id), class: "btn-dark btn border-light" %>
+        <%= link_to profile_path(current_user.id), class: "btn-dark btn border-light header-link-desktop" do %>
+                        <span class="p-2">
+                          <i class="fa-solid fa-user"></i> Profile  
+                        </span>
+                    <% end %>
       </div>
     </li>
     <% end %>
@@ -266,6 +270,10 @@ width: 100%;
 
 .blur-effect {
   filter: blur(5px);
+}
+
+.header-link-desktop:hover{
+  background-color: rgba(35,180,205,255);
 }
 </style>
 <hr>
