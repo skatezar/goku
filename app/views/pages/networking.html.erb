@@ -41,11 +41,11 @@
 </div>
 
 
-<!--
+
 <div class="d-flex justify-content-center">
   <%= link_to "Filter Events", meetingfilter_path,  class: "btn btn-dark" %>  
 </div>
--->
+
 
 <div class="desktop-only">
 <%= calendar(number_of_days: 30, events: @meetings) do |date, meetings| %>
@@ -110,9 +110,11 @@
 <% end %>
 </div>
 
-<p class="italic_small text-center">click on a day for more details!</p>
-
-
+<p class="text-center">
+  <strong>
+    click on firm logos for details!
+  </strong>
+</p>
 
 <script type="text/javascript">
   // Text to search for (case-sensitive)
