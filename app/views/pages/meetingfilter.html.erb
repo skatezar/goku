@@ -15,22 +15,22 @@
   <form action="<%= meetingfilter_path %>" method="get">
     <div class="form-row">
       <div class="col-md-3 p-3">
-        <%= select_tag :company, options_for_select([["Select company", ""]].concat(@companies), params[:company]), { class: "form-control" } %>
+        <%= select_tag :company, options_for_select([["Company", ""]].concat(@companies), params[:company]), { class: "form-control" } %>
       </div>
       <div class="col-md-3 p-3">
-        <%= select_tag :industry, options_for_select([["Select industry", ""]].concat(@industries), params[:industry]), { class: "form-control" } %>
+        <%= select_tag :industry, options_for_select([["Industry", ""]].concat(@industries), params[:industry]), { class: "form-control" } %>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md-3 p-3">
-        <%= select_tag :location, options_for_select([["Select location", ""]].concat(@locations), params[:location]), { class: "form-control" } %>
+        <%= select_tag :location, options_for_select([["Location", ""]].concat(@locations), params[:location]), { class: "form-control" } %>
       </div>
       <div class="col-md-3 p-3">
-        <%= select_tag :virtual_or_inperson, options_for_select([["Select type", ""]].concat(@virtual_or_inperson_options), params[:virtual_or_inperson]), { class: "form-control" } %>
+        <%= select_tag :virtual_or_inperson, options_for_select([["Job type", ""]].concat(@virtual_or_inperson_options), params[:virtual_or_inperson]), { class: "form-control" } %>
       </div>
     </div>
     <div class="d-flex justify-content-center">
-      <%= submit_tag "Filter", class: "btn btn-dark", style: "width: 20%;" %>
+      <%= submit_tag "Filter", class: "btn btn-dark", style: "w-100 width: 20%;" %>
     </div>
     <div class="d-flex mt-3 justify-content-center">
       <%= link_to "Reset filter", meetingfilter_path, class: "btn btn-white" %>
@@ -39,24 +39,34 @@
 </div>
 </div>
 
-<div class="" style="width:100%;">
-  <div class="row d-flex  justify-content-center">
-    
-      <% @meetings.each do |meeting| %>
-      <div class="col-6" style="background-color: white; border: 1px solid black; padding: 5px; width:165px; margin: 5px;">
-      <h6 class="text-center bold"><%= meeting.name %></h6>
-      <div class="d-flex justify-content-center mt-3"> 
-        <%= cl_image_tag meeting.photo1.key, height: 75, crop: :fill %>
+<div class="card-container" id="cardContainer" style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center;">
+  <% @meetings.each do |meeting| %>
+  <% if meeting.present? %>
+    <div class="card" style="background-color: white; border: 1px solid black; padding: 5px; width: 155px; height: 260px; margin: 5px; display: flex; flex-direction: column; justify-content: space-between;">
+      <div style="flex: 1;">
+        <h6 class="text-center bold" style="max-height: 2.5em; height: 2.5em; overflow: hidden;"><%= meeting.name %></h6>
+        <div class="d-flex justify-content-center mt-3" style="background-image: url('<%= cl_image_path meeting.photo1.key %>'); width: 100%; height: 80px; max-height: 80px; background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+
       </div>
-      <p class="text-center mt-2"> <%= meeting.location %></p>
-      <p class="text-center italic italic_small" style="margin-top: -15px;">Apply by <%= meeting.start_time.day %> <%= t('date.abbr_month_names')[meeting.start_time.month] %> <%= meeting.start_time.year %></p>
+
+      <div style="flex: 1;">
+        <p class="text-center mt-2" style="max-height: 1.5em; overflow: hidden;"><%= meeting.location %></p>
+        <p class="text-center italic italic_small" style="margin-top: -15px;"> <%= meeting.start_time.day %> <%= t('date.abbr_month_names')[meeting.start_time.month] %> <%= meeting.start_time.year %></p>
+      </div>
       
-      <%= link_to 'View', meeting_path(meeting), class: 'btn btn-green', style: 'width: 100%; bottom:50px;' %>
-      </div>
-      <% end %>
-    
-  </div>
+      <%= link_to 'View', meeting_path(meeting), class: 'btn btn-green', style: 'width: 100%' %>
+    </div>
+    <% end %>
+  <% end %>
 </div>
+
+
 
 </body>
 </html>
+
+<style type="text/css">
+  .form-control{
+    width:300px;
+  }
+</style>
