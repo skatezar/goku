@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +51,7 @@
       <p class="text-center mt-2"> <%= meeting.location %></p>
       <p class="text-center italic italic_small" style="margin-top: -15px;">Apply by <%= meeting.start_time.day %> <%= t('date.abbr_month_names')[meeting.start_time.month] %> <%= meeting.start_time.year %></p>
       
-      <%= link_to 'View', meeting_path(meeting), class: 'btn btn-green', style: 'width: 100%' %>
+      <%= link_to 'View', meeting_path(meeting), class: 'btn btn-green', style: 'width: 100%; bottom:50px;' %>
       </div>
       <% end %>
     
