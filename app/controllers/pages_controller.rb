@@ -35,6 +35,44 @@ class PagesController < ApplicationController
     	filter_meetings if params[:company].present? || params[:start_time].present? || params[:industry].present?
   	end
 
+  	def daily
+  		alljobs = Ukfinancejob.all
+  		@alljobs_array = []
+  		@counter = 0
+  		alljobs.each do |job|
+  			if job.application_opening_date == Date.today
+  				@alljobs_array.push(job)
+  				@counter = @counter + 1
+  			end
+  		end 
+
+  		return @alljobs_array
+  	end
+
+  	def lol
+  		alljobs = Ukfinancejob.all
+  		@alljobs_array = []
+  		@jobcounter = 0
+  		alljobs.each do |job|
+  			if job.application_opening_date == Date.today
+  				@alljobs_array.push(job)
+  				@jobcounter = @jobcounter + 1
+  			end
+  		end 
+
+  		allevents = Meeting.all
+  		@allevents_array = []
+  		@eventcounter = 0
+  		allevents.each do |event|
+  			if event.start_time == Date.today
+  				@allevents_array.push(event)
+  				@eventcounter = @jobcounter + 1
+  			end
+  		end 
+
+  		return @alljobs_array, @allevents_array
+  	end
+
 	private
 
 	def filter_meetings

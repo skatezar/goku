@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admin Only</title>
+</head>
+
+<body>
+
+
+	<h4 class="text-center">
+		Daily Job Update
+	</h4>
+<p class="heartbeat-text text-center" style="color: lightblue;">
+		Jobs opening today: <%= @counter %> 
+	</p>
+
+	<p class="text-center">
+		<strong>
+			<%= Date.today.day %> <%= t('date.abbr_month_names')[ Date.today.month] %> <%= Date.today.year %>	
+		</strong>
+	</p>
+	
+
+		<div class="card-container" id="cardContainer" style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center;">
+  <% @alljobs_array.each do |ukfinancejob| %>
+  <% if ukfinancejob.present? %>
+    <div class="card" style="background-color: white; border: 1px solid black; padding: 5px; width: 155px; height: 260px; margin: 5px; display: flex; flex-direction: column; justify-content: space-between;">
+      <div style="flex: 1;">
+        <h6 class="text-center bold" style="max-height: 2.5em; height: 2.5em; overflow: hidden;"><%= ukfinancejob.title %></h6>
+        <div class="d-flex justify-content-center mt-3" style="background-image: url('<%= cl_image_path ukfinancejob.photo.key %>'); width: 100%; height: 80px; max-height: 80px; background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+        
+
+
+      </div>
+
+      <div style="flex: 1;">
+        <p class="text-center mt-2" style="max-height: 1.5em; overflow: hidden;"><%= ukfinancejob.location %></p>
+        <p class="text-center italic italic_small" style="margin-top: -15px;">Apply by <%= ukfinancejob.deadline_date.day %> <%= t('date.abbr_month_names')[ukfinancejob.deadline_date.month] %> <%= ukfinancejob.deadline_date.year %></p>
+      </div>
+      
+      <%= link_to 'View', ukfinancejob_path(ukfinancejob), class: 'btn btn-green', style: 'width: 100%' %>
+    </div>
+  <% end %>
+</div>
+	<% end %>
+</body>

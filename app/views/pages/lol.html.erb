@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LOL</title>
+</head>
+<body>
+<!-- daily -->
+<h3>Message Generator</h3>
+<% if current_user and current_user.admin == true %>
+<% @alljobs_array.each do |job| %>
+	<%= job.title %>
+<% end %>
+<p>
+Morning wrap - 
+
+</p>
+<p>
+
+*Jobs opening today: <%= @jobcounter%>*
+add emoji
+</p>
+<p>
+<% @alljobs_array.each do |job| %>
+<%= job.title %>
+at
+<%= job.company %>:
+<%= job.url %>
+
+<% end %>
+</p>
+<% else %>
+admin only
+<% end %>
+<%= @allevents_array %>
+<!-- weekly -->
+</body>
+</html>
