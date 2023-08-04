@@ -50,7 +50,7 @@
 
 
 <div class="desktop-only">
-<%= calendar(number_of_days: 30, events: @meetings) do |date, meetings| %>
+<%= month_calendar(events: @meetings) do |date, meetings| %>
   <%= date.day %>
   <% meetings.each do |meeting| %>
     <%= link_to meeting_path(meeting) do %>

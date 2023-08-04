@@ -80,12 +80,12 @@ class PagesController < ApplicationController
 
 
   		allevents = Meeting.all
-  		@allevents_array = []
-  		@eventcounter = 0
+  		@allevents_array_today = []
+  		@eventcounter_today = 0
   		allevents.each do |event|
-  			if event.start_time == Date.today
-  				@allevents_array.push(event)
-  				@eventcounter = @eventcounter + 1
+  			if event.deadline_date == Date.today
+  				@allevents_array_today.push(event)
+  				@eventcounter_today = @eventcounter_today + 1
   			end
   		end 
   	end

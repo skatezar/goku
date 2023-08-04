@@ -24,6 +24,7 @@
     <%= form.text_field :company, class: 'form-control' %>
   </div>
   <br>
+
   <div>
     <%= form.label :industry, style: "display: block" %>
     <%= form.select :industry, options_for_select(['Sell side', 'Buy side']), {}, class: 'form-control' %>
@@ -57,6 +58,11 @@
   <div>
     <%= form.label :start_time, style: "display: block" %>
     <%= form.datetime_field :start_time, class: 'form-control' %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :deadline_date, style: "display: block" %>
+    <%= form.datetime_field :deadline_date, class: 'form-control' %>
   </div>
   <br>
   <div class="form-group">

@@ -12,18 +12,20 @@
 
 <strong>DAILY</strong>
 <p>
-	Evening Wrap - 
+	*Evening Wrap - Jobs & Networking Events*
 </p>
 <p>
-	Morning Wrap - 
+	*Morning Wrap - Jobs & Networking Events*
 </p>
+<strong>JOBS</strong>
 <p>
-	**Jobs applications opening today: <%= @jobcounter_opening%>**
-	add emoji
+	*Jobs applications opening today: <%= @jobcounter_opening%>*
+	
 </p>
 <p>
 	<% @alljobs_array_opening_today.each do |job| %>
 		<p>	
+		💼
 		<%= job.title %> at <%= job.company %>:
 		www.graduateflow.com/ukfinancejobs/<%=job.id%>
 		</p>
@@ -33,37 +35,52 @@
 
 <p>
 	*Job applications closing today: <%= @jobcounter_closing%>*
-	add emoji
+	
 </p>
 <p>
 	<% @alljobs_array_closing_today.each do |job| %>
 		<p>
+		💼
 		<%= job.title %> at <%= job.company %>:
 		www.graduateflow.com/ukfinancejobs/<%=job.id%>	
 		</p>
 	<% end %>
 </p>
+<strong>
+	NETWORKING EVENTS 
+</strong>
+<p>
+	*Networking Event application deadlines today: <%= @eventcounter_today%>*
+</p>
+<p>
+	<% @allevents_array_today.each do |event| %>
+		<p>
+		🤝🏽 
+		<%= event.name %> at <%= event.company %>:
+		www.graduateflow.com/meetings/<%=event.id%>
+		</p>
+	<% end %>
+</p>
 <p class="italic">
-	This relates to jobs posted on www.graduateflow.com, which are predominantly internships at financial services companies	
+	This relates to jobs & events posted on www.graduateflow.com, which are predominantly internships at financial services companies. Create a profile on our platform to manage your applications & set personal reminders. Feel free to reach out with questions on whatsapp or contact@graduateflow.com.
 </p>
 
 
 <hr>
-
+<!--
 <strong>WEEKLY</strong>
 <p>
 	The Week Ahead - 
 </p>
 
 <p>
-**Jobs applications opening this week: <%= @jobcounter_opening_week %>**
-	add emoji	
+*Jobs applications opening this week: <%= @jobcounter_opening_week %>*
 </p>
 
 <% @alljobs_array_opening_week.each do |job| %>
 	
 	<p>
-		- 
+	💼
 	<%= job.title %>
 	at
 	<%= job.company %>:
@@ -73,14 +90,13 @@
 <% end %>
 
 <p class="italic">
-	This relates to jobs posted on www.graduateflow.com, which are predominantly internships at financial services companies	
+	This relates to jobs posted on www.graduateflow.com, which are predominantly internships at financial services companies. Feel free to reach out with questions on whatsapp or contact@graduateflow.com.
 </p>
 
-
+-->
 
 <% else %>
 admin only
 <% end %>
-<!-- weekly -->
 </body>
 </html>
