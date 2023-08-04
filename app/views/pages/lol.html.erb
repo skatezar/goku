@@ -7,33 +7,80 @@
 </head>
 <body>
 <!-- daily -->
-<h3>Message Generator</h3>
+<h3 class="text-center">Message Generator</h3>
 <% if current_user and current_user.admin == true %>
-<% @alljobs_array.each do |job| %>
+
+<strong>DAILY</strong>
+<p>
+	Evening Wrap - 
+</p>
+<p>
+	Morning Wrap - 
+</p>
+<p>
+	**Jobs applications opening today: <%= @jobcounter_opening%>**
+	add emoji
+</p>
+<p>
+	<% @alljobs_array_opening_today.each do |job| %>
+		<p>	
+		<%= job.title %> at <%= job.company %>:
+		www.graduateflow.com/ukfinancejobs/<%=job.id%>
+		</p>
+		
+	<% end %>
+</p>
+
+<p>
+	*Job applications closing today: <%= @jobcounter_closing%>*
+	add emoji
+</p>
+<p>
+	<% @alljobs_array_closing_today.each do |job| %>
+		<p>
+		<%= job.title %> at <%= job.company %>:
+		www.graduateflow.com/ukfinancejobs/<%=job.id%>	
+		</p>
+	<% end %>
+</p>
+<p class="italic">
+	This relates to jobs posted on www.graduateflow.com, which are predominantly internships at financial services companies	
+</p>
+
+
+<hr>
+
+<strong>WEEKLY</strong>
+<p>
+	The Week Ahead - 
+</p>
+
+<p>
+**Jobs applications opening this week: <%= @jobcounter_opening_week %>**
+	add emoji	
+</p>
+
+<% @alljobs_array_opening_week.each do |job| %>
+	
+	<p>
+		- 
 	<%= job.title %>
+	at
+	<%= job.company %>:
+	www.graduateflow.com/ukfinancejobs/<%=job.id%> on <%= job.application_opening_date.day %> MAKE IT DAY
+	</p>
+	
 <% end %>
-<p>
-Morning wrap - 
 
+<p class="italic">
+	This relates to jobs posted on www.graduateflow.com, which are predominantly internships at financial services companies	
 </p>
-<p>
 
-*Jobs opening today: <%= @jobcounter%>*
-add emoji
-</p>
-<p>
-<% @alljobs_array.each do |job| %>
-<%= job.title %>
-at
-<%= job.company %>:
-<%= job.url %>
 
-<% end %>
-</p>
+
 <% else %>
 admin only
 <% end %>
-<%= @allevents_array %>
 <!-- weekly -->
 </body>
 </html>

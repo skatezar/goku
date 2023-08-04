@@ -50,15 +50,34 @@ class PagesController < ApplicationController
   	end
 
   	def lol
-  		alljobs = Ukfinancejob.all
-  		@alljobs_array = []
-  		@jobcounter = 0
+		alljobs = Ukfinancejob.all
+
+  		@alljobs_array_opening_today = []
+  		@alljobs_array_closing_today = []
+  		@alljobs_array_opening_week = []
+
+  		@jobcounter_opening = 0
+  		@jobcounter_closing = 0
+  		@jobcounter_opening_week = 0
+
   		alljobs.each do |job|
-  			if job.application_opening_date == Date.today
-  				@alljobs_array.push(job)
-  				@jobcounter = @jobcounter + 1
+  			if job.guesstimate == false && job.application_opening_date == Date.today
+  				@alljobs_array_opening_today.push(job)
+  				@jobcounter_opening = @jobcounter_opening + 1
   			end
+
+  			if job.guesstimate_deadline == false && job.deadline_date == Date.today
+  				@alljobs_array_closing_today.push(job)
+  				@jobcounter_closing = @jobcounter_closing + 1
+  			end 
+
+  			if job.guesstimate_deadline == false && (job.application_opening_date) <= (Date.today + 7)
+  				@alljobs_array_opening_week.push(job)
+  				@jobcounter_opening_week = @jobcounter_opening_week + 1
+  			end 
   		end 
+
+
 
   		allevents = Meeting.all
   		@allevents_array = []
@@ -66,11 +85,9 @@ class PagesController < ApplicationController
   		allevents.each do |event|
   			if event.start_time == Date.today
   				@allevents_array.push(event)
-  				@eventcounter = @jobcounter + 1
+  				@eventcounter = @eventcounter + 1
   			end
   		end 
-
-  		return @alljobs_array, @allevents_array
   	end
 
 	private
