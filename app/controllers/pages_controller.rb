@@ -68,10 +68,12 @@ class PagesController < ApplicationController
   		end 
 
   		allevents.each do |event|
-  			if event.deadline_date <= Date.today && event.deadline_date > Date.today - 1
-  				@allevents_array.push(event)
-  				@counter_events_deadline = @counter_events_deadline + 1
-  			end
+  			if event.deadline_date.present?
+	  			if event.deadline_date <= Date.today && event.deadline_date > Date.today - 1
+	  				@allevents_array.push(event)
+	  				@counter_events_deadline = @counter_events_deadline + 1
+	  			end
+	  		end
   		end 
   	end
 
