@@ -55,6 +55,20 @@ class PagesController < ApplicationController
   		return @alljobs_array
   	end
 
+  	def weekly
+  		alljobs = Ukfinancejob.all
+  		@alljobs_array = []
+  		@counter = 0
+  		alljobs.each do |job|
+  			if job.application_opening_date <= Date.today + 7
+  				@alljobs_array.push(job)
+  				@counter = @counter + 1
+  			end
+  		end 
+
+  		return @alljobs_array
+  	end
+
   	def lol
 		alljobs = Ukfinancejob.all
 
