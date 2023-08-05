@@ -1,5 +1,3 @@
-
-
 <br>
 <div class="desktop-only container">
     <!-- ... Rest of the code ... -->
@@ -172,7 +170,9 @@
 <br>
 <br>
       <% end %>
-
+<div class="d-flex justify-content-center mt-3" style="background-image: url('<%= cl_image_path @ukfinancejob.photo.key %>'); width: 45%; display: block; margin: auto; height: 80px; max-height: 80px; background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+      <div class="ukfinancejob-details">
+        <br>
 
       <h5 class="text-center w-100"><%= @ukfinancejob.title %></h5>
       <h6 class="text-center">Application Status: 
@@ -192,8 +192,7 @@
       <% end %>
       </h5>
       
-      <div class="d-flex justify-content-center mt-3" style="background-image: url('<%= cl_image_path @ukfinancejob.photo.key %>'); width: 100%; height: 80px; max-height: 80px; background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
-      <div class="ukfinancejob-details">
+      
         <br>
         <p><strong>Type:</strong> <%= @ukfinancejob.type_of_job %></p>
         <p><strong>Location:</strong> <%= @ukfinancejob.location %></p>
