@@ -60,7 +60,7 @@ class PagesController < ApplicationController
   		@alljobs_array = []
   		@counter = 0
   		alljobs.each do |job|
-  			if job.application_opening_date <= Date.today + 7
+  			if job.application_opening_date <= Date.today + 7 && job.application_opening_date > Date.today - 1
   				@alljobs_array.push(job)
   				@counter = @counter + 1
   			end
