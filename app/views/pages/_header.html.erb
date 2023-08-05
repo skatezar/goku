@@ -1,3 +1,20 @@
+<br>
+<br>
+<h4 class="text-center">
+  GRADUATE FLOW
+</h4>
+<p class="text-center">
+  How to really find a job within finance (UK & Europe)
+</p>
+  <div class="logo-container heartbeat-text d-flex justify-content-center">
+        <img src="<%= asset_path('logo.png') %>" style="max-width:300px;" alt="Logo">
+  </div>
+
+  <h5 class="text-center">
+    Launch: August 7th 2023
+  </h5>
+<!-- 
+
 <style type="text/css">
   /* Adjust the header styles according to your design requirements */
 .header {
@@ -88,24 +105,7 @@
 
               <hr>
               
-              <!--
-              <tr>
-                <%= link_to "Blogs", blogs_path, class: "btn header-link" %>
-              </tr>
 
-              <tr>
-                <%= link_to "1-1 Coaching", new_coachingrequest_path, class: "btn header-link" %>
-              </tr>
-              <br>
-
-              <tr>
-                <span style="margin-left:10px; margin-right:-15px;">
-                  <i class="fa-solid fa-address-card"></i>
-                </span>
-                <%= link_to "About Us", aboutus_path, class: "btn header-link" %>
-                
-              </tr>
-              -->
               <br>
               <tr>
                 <% if user_signed_in? %>
@@ -159,19 +159,7 @@
   <li>
     <%= link_to "Daily Update", daily_path, class: "header-link-desktop"  %>
   </li>
-  <!--
-  <li>
-    <%= link_to "Blogs", blogs_path %>
-  </li> 
-
-  <li>
-    <%= link_to "1-1 Coaching", new_coachingrequest_path %>
-  </li>
   
-  <li>
-    <%= link_to "About Us", aboutus_path %>
-  </li>
-  -->
   <% if user_signed_in? %>
     <% if Profile.find_by(user_id: current_user.id).present? %>
     <li>
