@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LOL</title>
+</head>
+<body>
+<!-- daily -->
+<h3 class="text-center">Stats</h3>
+<% if current_user and current_user.admin == true %>
+<p>
+	Registered users: <%= User.all.count %>
+</p>
+<p>
+	Registered on mail: <%= Mailform.all.count %>
+</p>
+<p>
+	Job post comments: <%= Comment.all.count %>
+</p>
+
+<p>
+	Favorited: <%= Favorite.all.count %>
+</p>
+
+
+
+<% Favorite.all.each do |favorite| %>
+<%= Ukfinancejob.find(ukfinancejob_id).title %>
+<% end %>
+
+
+<% Comment.all.each do |comment| %>
+<%= comment.content %>
+<% end %>
+
+<% User.all.each do |user| %>
+<%= user.email %>
+<% end %>
+
+<% else %>
+admin only
+<% end %>
+</body>
+</html>

@@ -113,6 +113,9 @@ class PagesController < ApplicationController
   		end 
   	end
 
+  	def adminpanel
+  	end
+
   	def lol
 		alljobs = Ukfinancejob.all
 

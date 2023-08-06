@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :mailform
   resources :blogs
   get 'CV', to: 'pages#CV', as: :cv
+  get 'adminpanel', to: 'pages#adminpanel', as: :adminpanel
   get 'lol', to: 'pages#lol', as: :lol
   get 'daily', to: 'pages#daily', as: :daily
   get 'weekly', to: 'pages#weekly', as: :weekly
