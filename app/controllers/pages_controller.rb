@@ -15,6 +15,8 @@ class PagesController < ApplicationController
 	def ukfinancejobs
 	end	
 
+
+
 	def requestsubmission
 	end
 
@@ -157,6 +159,57 @@ class PagesController < ApplicationController
   		end 
   	end
 
+
+  	def longermsg
+  		alljobs = Ukfinancejob.all
+  		allevents = Meeting.all
+
+  		@alljobs_array = []
+  		@alljobs_deadline_array  = []
+  		@allevents_array  = []
+
+  		@counter = 0
+  		@counter_deadline = 0
+  		@counter_events_deadline = 0
+
+  		alljobs.each do |job|
+  			if job.application_opening_date <= Date.today + 7 && job.application_opening_date > Date.today - 1
+  				@alljobs_array.push(job)
+  				@counter = @counter + 1
+  			end
+  		end 
+
+  		alljobs.each do |job|
+  			if job.deadline_date <= Date.today + 7 && job.deadline_date > Date.today - 1
+  				@alljobs_deadline_array.push(job)
+  				@counter_deadline = @counter_deadline + 1
+  			end
+  		end 
+
+  		allevents.each do |event|
+  			if event.deadline_date.present?
+	  			if event.deadline_date <= Date.today + 7 && event.deadline_date > Date.today - 1
+	  				@allevents_array.push(event)
+	  				@counter_events_deadline = @counter_events_deadline + 1
+	  			end
+	  		end
+  		end 
+
+
+
+  		allevents = Meeting.all
+  		@allevents_array_today = []
+  		@eventcounter_today = 0
+  		allevents.each do |event|
+  			if event.deadline_date == Date.today
+  				@allevents_array_today.push(event)
+  				@eventcounter_today = @eventcounter_today + 1
+  			end
+  		end 
+
+
+  		
+	end
 	private
 
 	def filter_meetings

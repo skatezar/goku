@@ -309,3 +309,12 @@ function toggleBlurEffect() {
 }
 toggleBlurEffect();
 </script>
+
+
+<% if current_user and current_user.admin == true %>
+<div class="d-flex justify-content-center">
+    <%= link_to 'daily msg', lol_path, class: 'btn btn-primary btn-dark m-2' %>
+    <%= link_to '3-day update msg', longermsg_path, class: 'btn btn-primary btn-dark m-2' %>
+    <%= link_to 'stats', adminpanel_path, class: 'btn btn-primary btn-dark m-2' %>    
+</div>
+<% end %>

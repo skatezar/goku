@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LOL</title>
+</head>
+<body>
+<!-- daily -->
+<h3 class="text-center">Weekly Message Generator</h3>
+<% if current_user and current_user.admin == true %>
+
+<strong>WEEKLY</strong>
+<p>
+	The Week Ahead - 
+</p>
+
+<p>
+*Jobs applications opening this week: <%= @jobcounter_opening_week %>*
+</p>
+
+<% @alljobs_array.each do |job| %>
+	
+	<p>
+	💼
+	<%= job.title %>
+	at
+	<%= job.company %>:
+	www.graduateflow.com/ukfinancejobs/<%=job.id%> on <%= job.application_opening_date.day %> MAKE IT DAY
+	</p>
+	
+<% end %>
+
+<p class="italic">
+	This relates to jobs posted on www.graduateflow.com, which are predominantly internships at financial services companies. Feel free to reach out with questions on whatsapp or contact@graduateflow.com.
+</p>
+
+
+There are currently <%= Ukfinancejob.where(type_of_job: "Summer Internship").where("application_opening_date < ?", Date.today).count %>
+relevant open summer internships that you can apply to. See them here: https://www.graduateflow.com/ukfinancejobs?search=&type_of_job=Summer+Internship&company=&field_in_finance=&commit=Search
+<% else %>
+admin only
+<% end %>
+</body>
+</html>

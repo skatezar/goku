@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'CV', to: 'pages#CV', as: :cv
   get 'adminpanel', to: 'pages#adminpanel', as: :adminpanel
   get 'lol', to: 'pages#lol', as: :lol
+  get 'longermsg', to: 'pages#longermsg', as: :longermsg
   get 'daily', to: 'pages#daily', as: :daily
   get 'weekly', to: 'pages#weekly', as: :weekly
   get 'meetingfilter', to: 'pages#meetingfilter', as: :meetingfilter
