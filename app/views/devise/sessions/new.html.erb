@@ -1,7 +1,11 @@
+<div class="container">
+
 <br>
 <h5 class="text-center">LOG IN</h5>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  
   <div class="field">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'email', class: 'form-control' %>
   </div>
@@ -26,3 +30,5 @@
 <br>
 
 <%= render "devise/shared/links" %>
+
+</div>

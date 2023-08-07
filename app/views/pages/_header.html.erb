@@ -58,14 +58,17 @@
 
 <div class="header">
   <div class="logo-container mobile-only">
-        <img src="<%= asset_path('logo.png') %>" alt="Logo">
+        <%= link_to root_path, class: "no-style" do %>
+      <img src="<%= asset_path('logo.png') %>" alt="Logo" class="desktop-logo">
+    <% end %>
   </div>
+  
   <button class="btn-non-bounce margin-right-btn mobile-only btn-green" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="toggleDropdown">
     <span class="burger-icon"></span>
   </button>
 </div>
 
-  <div class="collapse bounce-this-slow mobile-only" id="collapseExample" style="background-color: rgba(239, 239, 240); margin-top:10px;">       
+  <div class="collapse mobile-only" id="collapseExample" style="background-color: rgba(239, 239, 240); margin-top:10px;">       
             <table  class="table table-hover table-condensed  " >
             <thead>
               <tr>
@@ -138,7 +141,9 @@
 </span>
 <section class="fae-this .collapse.show.bouncy-element"> 
   <h1 class="text-center no-style mt-3 background">
-    <img src="<%= asset_path('logo.png') %>" alt="Logo" class="desktop-only desktop-logo">
+    <%= link_to root_path, class: "no-style" do %>
+      <img src="<%= asset_path('logo.png') %>" alt="Logo" class="desktop-only desktop-logo">
+    <% end %>
     <%= link_to "Graduate Flow", root_path, class: "no-style" %>
 
   </h1>
