@@ -37,7 +37,7 @@
 <br>
   <div class="d-flex justify-content-center">
     <strong>  
-      <a href="<%= meeting.link_to_url %>" class="no-style btn-white p-2 round-border" target="_blank">  
+      <a href="<%= meeting.link_to_url %>" class="no-style btn-dark p-2 round-border" target="_blank">  
         LINK TO EVENT
       </a>
     </strong>
@@ -67,7 +67,7 @@
   
   <div class="d-flex justify-content-center">
     <strong>  
-      <a href="<%= meeting.link_to_url %>" class="no-style btn-white p-2 round-border" target="_blank">  
+      <a href="<%= meeting.link_to_url %>" style="color: white;" class="no-style btn-dark p-2 round-border" target="_blank">  
         LINK TO EVENT
       </a>
     </strong>
@@ -115,7 +115,7 @@
   <% end %>
 <% else %>
 <p>
-  <%= link_to 'Login', new_user_session_path, class: 'btn btn-white' %>
+  <%= link_to 'Login', new_user_session_path, class: 'btn btn-green' %>
   to comment
 </p>
 <% end %>

@@ -63,7 +63,7 @@
     <% end %>
   </div>
   
-  <button class="btn-non-bounce margin-right-btn mobile-only btn-green" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="toggleDropdown">
+  <button class="btn-non-bounce margin-right-btn mobile-only btn-dark" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="toggleDropdown">
     <span class="burger-icon"></span>
   </button>
 </div>
@@ -103,6 +103,10 @@
 
               <hr>
               <tr>
+                <span style="margin-left:10px; margin-right:-15px;">
+                  <i class="fa-solid fa-table-columns"></i>
+                </span>
+                
                 <%= link_to "Daily Update", daily_path, class: "btn header-link "  %>               
               </tr>
 
@@ -126,7 +130,7 @@
                 </div>
                 <br>
                 <div style="margin-left:10px;"> 
-                  <%= link_to "Register", new_user_registration_path, class: "btn btn-white border-light"  %>
+                  <%= link_to "Register", new_user_registration_path, class: "btn btn-green border-light"  %>
                 </div>
                     
                 <% end %>
