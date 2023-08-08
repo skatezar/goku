@@ -92,7 +92,7 @@
         <p><strong>HR Contact:</strong> <%= @ukfinancejob.hr_email %></p>
         <p><strong>Application Process:</strong> <%= @ukfinancejob.app_process %></p>
         <p><strong>Description:</strong> <%= @ukfinancejob.description %></p>
-        <a class="card-text btn btn-white w-100 mb-3" href="<%= @ukfinancejob.url%>" target="_blank"><strong>
+        <a class="card-text btn btn-green w-100 mb-3" href="<%= @ukfinancejob.url%>" target="_blank"><strong>
           Link to career website</strong></a>
           <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
           <% else %>   
@@ -217,7 +217,7 @@
         <p><strong>Description:</strong> <%= @ukfinancejob.description %></p>
           <br>
           <br>
-          <a class="card-text btn btn-white w-100 mb-3" href="<%= @ukfinancejob.url%>" target="_blank"><strong>
+          <a class="card-text btn btn-green w-100 mb-3" href="<%= @ukfinancejob.url%>" target="_blank"><strong>
           Link to career website</strong></a>
           <% if Date.today >= @ukfinancejob.application_opening_date && Date.today <= @ukfinancejob.deadline_date %>
           <% else %>   
@@ -268,7 +268,7 @@
   <% end %>
 <% else %>
 <p>
-  <%= link_to 'Login', new_user_session_path, class: 'btn btn-white' %>
+  <%= link_to 'Login', new_user_session_path, class: 'btn btn-dark' %>
   to comment
 </p>
 <% end %>
