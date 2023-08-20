@@ -32,10 +32,13 @@
 
 
   <body>
-  
-    <%= render :partial => 'pages/header' %>
-    <%= yield %>
-    <%= render :partial => 'pages/footer' %>
+    <% if current_user and current_user.admin == true %>
+      <%= render :partial => 'pages/header' %>
+      <%= yield %>
+      <%= render :partial => 'pages/footer' %>
+    <% else %>
+      <p>Under maintenance...</p>
+    <% end %>
 
   </body>
 </html>
