@@ -107,6 +107,23 @@
         <p><strong>Division:</strong> <%= @ukfinancejob.industry %></p>
         <p><strong>HR Contact:</strong> <%= @ukfinancejob.hr_email %></p>
         <p><strong>Application Process:</strong> <%= @ukfinancejob.app_process %></p>
+        
+        <% if @ukfinancejob.interviewdatabool == true %>
+          <p><strong>Interview Process & questions:</strong> 
+            <ol>
+            <% @interviewdata.each do |i| %>
+              <li>
+                <%= i %>
+              </li>
+              
+            <% end %>
+            </ol>
+           
+          </p>
+        <% else %>
+        hi
+        <% end %>
+
         <p><strong>Description:</strong> <%= @ukfinancejob.description %></p>
         <a class="card-text btn btn-green w-100 mb-3" href="<%= @ukfinancejob.url%>" target="_blank"><strong>
           Link to career website</strong></a>

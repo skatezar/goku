@@ -38,6 +38,16 @@
   </div>
   <br>
   <div class="form-group">
+    <p>Interview data available?</p>
+    <%= form.check_box :interviewdatabool %>
+  </div>
+  <br>
+  <div class="form-group">
+    <p>Interview Data</p>
+    <%= form.text_field :interviewdata, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
     <%= form.label :application_opening_date %>
     <p class="italic_small">provide guess if not available</p>
     <%= form.date_field :application_opening_date, class: 'form-control' %>

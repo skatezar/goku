@@ -18,6 +18,7 @@
     <%= form.text_field :company, class: 'form-control' %>
   </div>
 
+
   <br>  
   
   <div class="form-group">
@@ -40,6 +41,17 @@
     <%= form.select :location, options_for_select(['London, UK', 'Worldwide',]), {}, class: 'form-control' %>
   </div>
   <br>
+  <div class="form-group">
+    <p>Interview data available?</p>
+    <%= form.check_box :interviewdatabool %>
+  </div>
+  <br>
+  <div class="form-group">
+    <p>Interview Data</p>
+    <%= form.text_field :interviewdata, class: 'form-control' %>
+  </div>
+  <br>
+  
   <div class="form-group">
     <%= form.label :application_opening_date %>
     <p class="italic_small">provide guess if not available</p>
