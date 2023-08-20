@@ -104,7 +104,7 @@
         <p><strong>Rolling Admission:</strong> 
           <%= @ukfinancejob.rolling_admission ? 'Yes' : 'No' %></p>    
         <p><strong>Eligibility:</strong> <%= @ukfinancejob.eligibility %></p>
-        <p><strong>Division:</strong> <%= @ukfinancejob.industry %></p>
+        <!-- <p><strong>Division:</strong> <%= @ukfinancejob.industry %></p>-->
         <p><strong>HR Contact:</strong> <%= @ukfinancejob.hr_email %></p>
         <p><strong>Application Process:</strong> <%= @ukfinancejob.app_process %></p>
         
@@ -121,7 +121,9 @@
            
           </p>
         <% else %>
-        hi
+        <p class="italic_small">
+          We will add details here as it becomes available
+        </p>
         <% end %>
 
         <p><strong>Description:</strong> <%= @ukfinancejob.description %></p>
@@ -244,9 +246,26 @@
           <% end %></p>
         <p><strong>Rolling Admission:</strong> <%= @ukfinancejob.rolling_admission ? 'Yes' : 'No' %></p>
         <p><strong>Eligibility:</strong> <%= @ukfinancejob.eligibility %></p>
-        <p><strong>Division:</strong> <%= @ukfinancejob.industry %></p>
+        <!-- <p><strong>Division:</strong> <%= @ukfinancejob.industry %></p>-->
         <p><strong>HR Contact:</strong> <%= @ukfinancejob.hr_email %></p>
         <p><strong>Application Process:</strong> <%= @ukfinancejob.app_process %></p>
+        <% if @ukfinancejob.interviewdatabool == true %>
+          <p><strong>Interview Process & questions:</strong> 
+            <ol>
+            <% @interviewdata.each do |i| %>
+              <li style="font-size:16px;">
+                  <%= i %>  
+              </li>
+              
+            <% end %>
+            </ol>
+           
+          </p>
+        <% else %>
+        <p class="italic_small">
+          We will add details here as it becomes available
+        </p>
+        <% end %>
         <p><strong>Description:</strong> <%= @ukfinancejob.description %></p>
           <br>
           <br>
@@ -291,7 +310,7 @@
 <% if current_user.present? %>
     <%= form_with(model: [@ukfinancejob, Comment.new], url: ukfinancejob_comments_path(@ukfinancejob)) do |form| %>
     <div> 
-      <%= form.text_area :content, placeholder: 'Enter your comment', class: "d-flex w-100" %>
+      <%= form.text_area :content, placeholder: 'Enter your comment', class: "d-flex w-100 p-2" %>
     </div>
     <div>
       <%= form.hidden_field :user_id, value: current_user.id %>
