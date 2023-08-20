@@ -3,11 +3,19 @@
 <p> DO NOT LEAVE ANY FIELDS BLANK; copy and paste them from the career sites</p>
 
 <%= form_with(model: @ukfinancejob, url: ukfinancejob_path(@ukfinancejob), class: 'ukfinancejob-form') do |form| %>
+  <% if current_user and current_user.admin == true %>
+    <div class="form-group">
+      <p>Approved?</p>
+      <%= form.check_box :approved_by_admin %>
+    </div>
+    <br>
+  <% end %>
   <div class="form-group">
     <%= form.label :title %>
     <%= form.text_field :title, class: 'form-control' %>
   </div>
   <br>
+
   <div class="form-group">
     <%= form.label :url %>
     <%= form.text_field :url, class: 'form-control' %>
@@ -45,6 +53,11 @@
   <div class="form-group">
     <p>Interview Data</p>
     <%= form.text_field :interviewdata, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
+    <p>Interview Data Year</p>
+    <%= form.text_field :interviewdatayear, class: 'form-control' %>
   </div>
   <br>
   <div class="form-group">

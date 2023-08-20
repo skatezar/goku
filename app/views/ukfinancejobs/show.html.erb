@@ -1,3 +1,11 @@
+<br>
+<% if current_user and current_user.admin == true %>
+<h4 class="text-center">
+  ADMIN APPROVAL: <%= @ukfinancejob.approved_by_admin %>
+</h4>
+<% end %>
+<br>
+
 <button class="btn mobile-only w-100 btn-green" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">+ What is this?</button>
 
 <div class="d-flex justify-content-center">
@@ -109,7 +117,8 @@
         <p><strong>Application Process:</strong> <%= @ukfinancejob.app_process %></p>
         
         <% if @ukfinancejob.interviewdatabool == true %>
-          <p><strong>Interview Process & questions:</strong> 
+        <% @interviewdata = @ukfinancejob.interviewdata.split(';') %>
+          <p><strong>Interview Process & questions:*</strong> 
             <ol>
             <% @interviewdata.each do |i| %>
               <li>
@@ -118,12 +127,15 @@
               
             <% end %>
             </ol>
+            <p class="small-text">*data from <%= @ukfinancejob.interviewdatayear %></p>
            
           </p>
         <% else %>
-        <p class="italic_small">
-          We will add details here as it becomes available
-        </p>
+        <p>
+          <strong>Interview Process & questions:</strong>
+        <span class="italic_small">
+          We will add details here as they becomes available
+        </span></p>
         <% end %>
 
         <p><strong>Description:</strong> <%= @ukfinancejob.description %></p>

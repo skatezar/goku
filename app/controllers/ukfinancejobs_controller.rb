@@ -3,7 +3,7 @@ class UkfinancejobsController < ApplicationController
   include ActiveModel::Dirty
 
   def index
-    @ukfinancejobs = Ukfinancejob.order(:application_opening_date)
+    @ukfinancejobs = Ukfinancejob.where(approved_by_admin: true).order(:application_opening_date)
      # Initialize filter options
     @locations = Ukfinancejob.pluck(:location).uniq
     @types_of_job = Ukfinancejob.pluck(:type_of_job).uniq.sort
@@ -52,8 +52,6 @@ class UkfinancejobsController < ApplicationController
   end
 
   def show
-    @interviewdata = @ukfinancejob.interviewdata.split(';')
-
   end
 
   def new
@@ -115,7 +113,7 @@ class UkfinancejobsController < ApplicationController
   end
 
   def ukfinancejob_params
-    params.require(:ukfinancejob).permit(:application_opening_date, :eligibility, :industry, :hr_email, :app_process, :photo, :title, :url, :type_of_job, :location, :deadline_date,  :rolling_admission, :company, :guesstimate, :description, :guesstimate_deadline, :diversity, :field_in_finance, :interviewdatabool, :interviewdata)
+    params.require(:ukfinancejob).permit(:application_opening_date, :eligibility, :industry, :hr_email, :app_process, :photo, :title, :url, :type_of_job, :location, :deadline_date,  :rolling_admission, :company, :guesstimate, :description, :guesstimate_deadline, :diversity, :field_in_finance, :interviewdatabool, :interviewdata, :interviewdatayear, :approved_by_admin)
   end
 
 

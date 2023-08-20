@@ -43,12 +43,18 @@
   <br>
   <div class="form-group">
     <p>Interview data available?</p>
-    <%= form.check_box :interviewdatabool %>
+    <%= form.check_box :approved_by_admin %>
   </div>
   <br>
   <div class="form-group">
     <p>Interview Data</p>
     <%= form.text_field :interviewdata, class: 'form-control' %>
+  </div>
+  <br>
+  
+  <div class="form-group">
+    <p>Interview Data Year</p>
+    <%= form.text_field :interviewdatayear, class: 'form-control' %>
   </div>
   <br>
   
