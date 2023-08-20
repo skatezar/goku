@@ -39,7 +39,7 @@
 Summer Internships: There are currently <%= Ukfinancejob.where(type_of_job: "Summer Internship").where("application_opening_date < ?", Date.today).count %>
 relevant  summer internships that you can already apply to. See them here: https://www.graduateflow.com/ukfinancejobs?search=&type_of_job=Summer+Internship&company=&field_in_finance=&application_opening_date_filter=true&commit=Search
 
-Insight Internships: There are currently <%= Ukfinancejob.where(type_of_job: "Insight Internship").where("application_opening_date < ?", Date.today).count %> relevant insight internships you can already apply to. See them here: https://www.graduateflow.com/ukfinancejobs?search=&type_of_job=Insight+Internship&company=&field_in_finance=&application_opening_date_filter=true&commit=Search
+Insight Internships: There are currently <%= Ukfinancejob.where(type_of_job: "Insight Internship").where("application_opening_date < ?", Date.today).count %> relevant insight internships you can already apply to. See https://www.graduateflow.com/ukfinancejobs?search=&type_of_job=Insight+Internship&company=&field_in_finance=&application_opening_date_filter=true&commit=Search
 
 <% else %>
 admin only
