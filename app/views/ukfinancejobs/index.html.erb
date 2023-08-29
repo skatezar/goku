@@ -30,8 +30,6 @@
 <div class="filter-container desktop-only">
   <br>
   <form id="filterForm" action="<%= ukfinancejobs_path %>" method="get">
-    
-      
     <div class="form-row">
       <div class="col-md-3 p-3">
       <%= select_tag :type_of_job, options_for_select([["Select type of job", ""]].concat(@types_of_job), params[:type_of_job]), { class: "form-control text-center" } %>
@@ -117,10 +115,6 @@
       <%= link_to "Reset search", ukfinancejobs_path,  class: "btn btn-green w-100" %>      </div>
   </form>
 </div>
-
-          
-
-
 
 
 <div class="card-container" id="cardContainer" style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center;">

@@ -115,6 +115,7 @@
         <!-- <p><strong>Division:</strong> <%= @ukfinancejob.industry %></p>-->
         <p><strong>HR Contact:</strong> <%= @ukfinancejob.hr_email %></p>
         <p><strong>Application Process:</strong> <%= @ukfinancejob.app_process %></p>
+        <p><strong>Online Test(s) and Provider:</strong> <%= @ukfinancejob.numberassessment %></p>
         
         <% if @ukfinancejob.interviewdatabool == true %>
         <% @interviewdata = @ukfinancejob.interviewdata.split(';') %>

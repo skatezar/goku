@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_20_165357) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_29_100724) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -145,6 +145,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_165357) do
     t.boolean "interviewdatabool", default: false
     t.string "interviewdatayear"
     t.boolean "approved_by_admin", default: false
+    t.string "numberassessment"
     t.index ["searchable"], name: "index_ukfinancejobs_on_searchable", using: :gin
   end
 
