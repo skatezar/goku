@@ -3,7 +3,7 @@ class UkfinancejobsController < ApplicationController
   include ActiveModel::Dirty
 
   def index
-    @ukfinancejobs = Ukfinancejob.where(approved_by_admin: true).order(:application_opening_date)
+    @ukfinancejobs = Ukfinancejob.order(:application_opening_date)
      # Initialize filter options
     @locations = Ukfinancejob.pluck(:location).uniq
     @types_of_job = Ukfinancejob.pluck(:type_of_job).uniq.sort
